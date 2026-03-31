@@ -28,7 +28,6 @@
     min-height: 100vh;
   }
 
-  /* ===== HEADER ===== */
   header {
     background: var(--primary);
     color: white;
@@ -64,59 +63,32 @@
     line-height: 1.2;
     margin-bottom: 8px;
   }
-  header p {
-    font-size: 13px;
-    opacity: 0.85;
-    font-weight: 300;
-  }
+  header p { font-size: 13px; opacity: 0.85; font-weight: 300; }
   .header-deco {
-    position: absolute;
-    right: -40px; top: -40px;
-    width: 240px; height: 240px;
-    border-radius: 50%;
-    border: 40px solid rgba(255,255,255,0.07);
-    pointer-events: none;
+    position: absolute; right: -40px; top: -40px;
+    width: 240px; height: 240px; border-radius: 50%;
+    border: 40px solid rgba(255,255,255,0.07); pointer-events: none;
   }
   .header-deco2 {
-    position: absolute;
-    right: 60px; bottom: -60px;
-    width: 140px; height: 140px;
-    border-radius: 50%;
-    border: 28px solid rgba(255,255,255,0.05);
-    pointer-events: none;
+    position: absolute; right: 60px; bottom: -60px;
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 28px solid rgba(255,255,255,0.05); pointer-events: none;
   }
 
-  /* ===== MAIN ===== */
-  main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 32px 16px 60px;
-  }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 60px; }
 
-  /* ===== PROGRESS ===== */
   .progress-bar-wrap {
-    background: #D1D9FF;
-    border-radius: 99px;
-    height: 6px;
-    margin-bottom: 28px;
-    overflow: hidden;
+    background: #D1D9FF; border-radius: 99px; height: 6px;
+    margin-bottom: 28px; overflow: hidden;
   }
   .progress-bar {
-    height: 100%;
-    background: var(--primary);
-    border-radius: 99px;
-    transition: width 0.5s cubic-bezier(.4,0,.2,1);
-    width: 0%;
+    height: 100%; background: var(--primary); border-radius: 99px;
+    transition: width 0.5s cubic-bezier(.4,0,.2,1); width: 0%;
   }
 
-  /* ===== SECTION CARD ===== */
   .section-card {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: var(--card-shadow);
-    padding: 28px 28px 24px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border);
+    background: var(--white); border-radius: 16px; box-shadow: var(--card-shadow);
+    padding: 28px 28px 24px; margin-bottom: 20px; border: 1px solid var(--border);
     animation: fadeUp 0.4s ease both;
   }
   @keyframes fadeUp {
@@ -129,528 +101,169 @@
   .section-card:nth-child(5) { animation-delay:.20s; }
 
   .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1.5px solid var(--border);
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1.5px solid var(--border);
   }
   .section-num {
-    background: var(--primary);
-    color: white;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+    background: var(--primary); color: white;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700;
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .section-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text);
-  }
+  .section-title { font-size: 15px; font-weight: 700; color: var(--text); }
 
-  /* ===== FORM ELEMENTS ===== */
-  .field {
-    margin-bottom: 18px;
-  }
+  .field { margin-bottom: 18px; }
   .field:last-child { margin-bottom: 0; }
 
-  label.field-label {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 7px;
-  }
-  label.field-label .req {
-    color: var(--accent);
-    margin-left: 4px;
-    font-size: 11px;
-  }
+  label.field-label { display: block; font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 7px; }
+  label.field-label .req { color: var(--accent); margin-left: 4px; font-size: 11px; }
 
-  input[type="text"],
-  input[type="tel"],
-  input[type="number"],
-  select,
-  textarea {
-    width: 100%;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 11px 14px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    color: var(--text);
-    background: #FAFBFF;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    appearance: none;
+  input[type="text"], input[type="tel"], input[type="number"], select, textarea {
+    width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 11px 14px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px;
+    color: var(--text); background: #FAFBFF; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s; appearance: none;
   }
   input:focus, select:focus, textarea:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0,87,255,0.10);
-    background: white;
+    border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,87,255,0.10); background: white;
   }
   select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230057FF' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 38px;
-    cursor: pointer;
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; cursor: pointer;
   }
   textarea { resize: vertical; min-height: 80px; }
 
-  /* Radio / Checkbox */
-  .radio-group, .check-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .radio-group.col, .check-group.col {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .radio-chip, .check-chip {
-    position: relative;
-  }
-  .radio-chip input, .check-chip input {
-    position: absolute; opacity: 0; width:0; height:0;
-  }
+  .radio-group, .check-group { display: flex; flex-wrap: wrap; gap: 10px; }
+  .radio-group.col, .check-group.col { flex-direction: column; gap: 8px; }
+  .radio-chip, .check-chip { position: relative; }
+  .radio-chip input, .check-chip input { position: absolute; opacity: 0; width:0; height:0; }
   .radio-chip label, .check-chip label {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 16px;
-    border-radius: 99px;
-    border: 1.5px solid var(--border);
-    background: #FAFBFF;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 400;
-    transition: all 0.18s;
-    user-select: none;
+    display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px;
+    border-radius: 99px; border: 1.5px solid var(--border); background: #FAFBFF;
+    cursor: pointer; font-size: 13px; font-weight: 400; transition: all 0.18s; user-select: none;
   }
   .radio-chip label::before, .check-chip label::before {
-    content: '';
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-    transition: all 0.18s;
+    content: ''; width: 14px; height: 14px; border-radius: 50%;
+    border: 2px solid var(--border); flex-shrink: 0; transition: all 0.18s;
   }
   .check-chip label::before { border-radius: 4px; }
-
-  .radio-chip input:checked + label,
-  .check-chip input:checked + label {
-    border-color: var(--primary);
-    background: #EEF3FF;
-    color: var(--primary);
-    font-weight: 500;
+  .radio-chip input:checked + label, .check-chip input:checked + label {
+    border-color: var(--primary); background: #EEF3FF; color: var(--primary); font-weight: 500;
   }
-  .radio-chip input:checked + label::before,
-  .check-chip input:checked + label::before {
-    background: var(--primary);
-    border-color: var(--primary);
+  .radio-chip input:checked + label::before, .check-chip input:checked + label::before {
+    background: var(--primary); border-color: var(--primary);
   }
 
-  /* Star rating */
-  .star-group {
-    display: flex;
-    gap: 6px;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
+  .star-group { display: flex; gap: 6px; flex-direction: row-reverse; justify-content: flex-end; }
   .star-group input { display: none; }
   .star-group label {
-    font-size: 30px;
-    cursor: pointer;
-    color: #D1D5DB;
-    transition: color 0.15s, transform 0.15s;
-    line-height: 1;
+    font-size: 30px; cursor: pointer; color: #D1D5DB;
+    transition: color 0.15s, transform 0.15s; line-height: 1;
   }
-  .star-group input:checked ~ label,
-  .star-group label:hover,
-  .star-group label:hover ~ label {
-    color: #FBBF24;
-    transform: scale(1.15);
+  .star-group input:checked ~ label, .star-group label:hover, .star-group label:hover ~ label {
+    color: #FBBF24; transform: scale(1.15);
   }
-  .star-label {
-    font-size: 12px;
-    color: var(--text-light);
-    margin-top: 5px;
-  }
+  .star-label { font-size: 12px; color: var(--text-light); margin-top: 5px; }
 
-  /* Two columns */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media(max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
 
-  /* ===== SUBMIT BUTTON ===== */
-  .btn-area {
-    text-align: center;
-    margin-top: 28px;
-  }
+  .btn-area { text-align: center; margin-top: 28px; }
   .btn-submit {
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 52px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 1px;
+    background: var(--primary); color: white; border: none; border-radius: 12px;
+    padding: 16px 52px; font-family: 'Noto Sans JP', sans-serif; font-size: 16px;
+    font-weight: 700; cursor: pointer; letter-spacing: 1px;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     box-shadow: 0 4px 18px rgba(0,87,255,0.28);
   }
-  .btn-submit:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(0,87,255,0.32);
-  }
+  .btn-submit:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,87,255,0.32); }
   .btn-submit:active { transform: translateY(0); }
 
-  /* ===== RESULT TABLE ===== */
-  #result-section {
-    display: none;
-    margin-top: 36px;
-  }
-  .result-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .result-header {
-    background: var(--primary);
-    color: white;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .result-header h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .result-count {
-    font-size: 13px;
-    opacity: 0.85;
-  }
-  .result-actions {
-    padding: 14px 24px;
-    background: #F8FAFF;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .btn-small {
-    padding: 7px 18px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1.5px solid var(--primary);
-    font-family: 'Noto Sans JP', sans-serif;
-    transition: all 0.18s;
-  }
+  #result-section { display: none; margin-top: 36px; }
+  .result-card { background: white; border-radius: 16px; box-shadow: var(--card-shadow); border: 1px solid var(--border); overflow: hidden; }
+  .result-header { background: var(--primary); color: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .result-header h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1px; }
+  .result-count { font-size: 13px; opacity: 0.85; }
+  .result-actions { padding: 14px 24px; background: #F8FAFF; border-bottom: 1px solid var(--border); display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-small { padding: 7px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1.5px solid var(--primary); font-family: 'Noto Sans JP', sans-serif; transition: all 0.18s; }
   .btn-small.primary { background: var(--primary); color: white; }
   .btn-small.primary:hover { background: var(--primary-dark); }
   .btn-small.outline { background: white; color: var(--primary); }
   .btn-small.outline:hover { background: #EEF3FF; }
   .btn-small.danger { border-color: var(--accent); color: var(--accent); background: white; }
   .btn-small.danger:hover { background: #FFF0ED; }
+  .btn-logout { padding: 7px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1.5px solid #D1D5DB; color: #6B7280; background: white; font-family: 'Noto Sans JP', sans-serif; transition: all 0.18s; }
+  .btn-logout:hover { background: #F3F4F6; }
 
   .table-wrap { overflow-x: auto; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    min-width: 720px;
-  }
-  thead th {
-    background: #F0F4FF;
-    padding: 11px 14px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    color: var(--primary);
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--border);
-    white-space: nowrap;
-  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 720px; }
+  thead th { background: #F0F4FF; padding: 11px 14px; text-align: left; font-weight: 600; font-size: 12px; color: var(--primary); letter-spacing: 0.5px; border-bottom: 2px solid var(--border); white-space: nowrap; }
   tbody tr { border-bottom: 1px solid #EEF0F8; transition: background 0.15s; }
   tbody tr:hover { background: #F8FAFF; }
   tbody td { padding: 10px 14px; color: var(--text); vertical-align: top; }
   .no-data { padding: 36px; text-align: center; color: var(--text-light); font-size: 14px; }
 
-  /* ===== SUCCESS TOAST ===== */
   .toast {
-    position: fixed;
-    bottom: 28px; right: 28px;
-    background: var(--success);
-    color: white;
-    padding: 14px 22px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 6px 24px rgba(0,179,122,0.3);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s;
-    pointer-events: none;
-    z-index: 999;
+    position: fixed; bottom: 28px; right: 28px; background: var(--success); color: white;
+    padding: 14px 22px; border-radius: 12px; font-size: 14px; font-weight: 500;
+    box-shadow: 0 6px 24px rgba(0,179,122,0.3); opacity: 0; transform: translateY(20px);
+    transition: all 0.3s; pointer-events: none; z-index: 999;
   }
   .toast.show { opacity: 1; transform: translateY(0); }
 
-  /* ===== LOCK MODAL ===== */
   .lock-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 20, 60, 0.55);
-    backdrop-filter: blur(6px);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
+    display: none; position: fixed; inset: 0; background: rgba(10,20,60,0.55);
+    backdrop-filter: blur(6px); z-index: 100; align-items: center; justify-content: center;
   }
   .lock-overlay.show { display: flex; }
   .lock-box {
-    background: white;
-    border-radius: 20px;
-    padding: 40px 36px 32px;
-    width: 340px;
-    max-width: 92vw;
-    box-shadow: 0 20px 60px rgba(0,87,255,0.18);
-    text-align: center;
-    animation: fadeUp 0.3s ease;
+    background: white; border-radius: 20px; padding: 40px 36px 32px; width: 340px;
+    max-width: 92vw; box-shadow: 0 20px 60px rgba(0,87,255,0.18); text-align: center; animation: fadeUp 0.3s ease;
   }
-  .lock-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .lock-box h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-  }
-  .lock-box p {
-    font-size: 12px;
-    color: var(--text-light);
-    margin-bottom: 20px;
-  }
-  .lock-input-wrap {
-    position: relative;
-    margin-bottom: 14px;
-  }
+  .lock-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+  .lock-box h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: 0.5px; }
+  .lock-box p { font-size: 12px; color: var(--text-light); margin-bottom: 20px; }
+  .lock-input-wrap { position: relative; margin-bottom: 14px; }
   #lockPassword {
-    width: 100%;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 44px 12px 14px;
-    font-size: 18px;
-    letter-spacing: 4px;
-    text-align: center;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    font-family: monospace;
-    background: #FAFBFF;
+    width: 100%; border: 2px solid var(--border); border-radius: 10px;
+    padding: 12px 44px 12px 14px; font-size: 18px; letter-spacing: 4px; text-align: center;
+    outline: none; transition: border-color 0.2s, box-shadow 0.2s; font-family: monospace; background: #FAFBFF;
   }
-  #lockPassword:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0,87,255,0.10);
-  }
-  #lockPassword.error {
-    border-color: var(--accent);
-    animation: shake 0.35s ease;
-  }
+  #lockPassword:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,87,255,0.10); }
+  #lockPassword.error { border-color: var(--accent); animation: shake 0.35s ease; }
   @keyframes shake {
-    0%,100%{transform:translateX(0)}
-    20%{transform:translateX(-8px)}
-    40%{transform:translateX(8px)}
-    60%{transform:translateX(-5px)}
-    80%{transform:translateX(5px)}
+    0%,100%{transform:translateX(0)} 20%{transform:translateX(-8px)}
+    40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)}
   }
-  .toggle-pw {
-    position: absolute;
-    right: 12px; top: 50%;
-    transform: translateY(-50%);
-    background: none; border: none;
-    cursor: pointer; font-size: 18px;
-    color: var(--text-light);
-    padding: 0;
-  }
-  .lock-error-msg {
-    font-size: 12px;
-    color: var(--accent);
-    min-height: 16px;
-    margin-bottom: 12px;
-  }
-  .btn-unlock {
-    width: 100%;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 13px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    margin-bottom: 10px;
-  }
+  .toggle-pw { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 18px; color: var(--text-light); padding: 0; }
+  .lock-error-msg { font-size: 12px; color: var(--accent); min-height: 16px; margin-bottom: 12px; }
+  .btn-unlock { width: 100%; background: var(--primary); color: white; border: none; border-radius: 10px; padding: 13px; font-family: 'Noto Sans JP', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-bottom: 10px; }
   .btn-unlock:hover { background: var(--primary-dark); transform: translateY(-1px); }
-  .btn-cancel {
-    background: none; border: none;
-    color: var(--text-light); font-size: 13px;
-    cursor: pointer; font-family: 'Noto Sans JP', sans-serif;
-    text-decoration: underline;
-  }
-  /* 閲覧ボタン */
-  .view-result-btn-wrap {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .btn-view-result {
-    background: white;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 13px 36px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
-  }
+  .btn-cancel { background: none; border: none; color: var(--text-light); font-size: 13px; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; text-decoration: underline; }
+
+  .view-result-btn-wrap { text-align: center; margin-top: 20px; }
+  .btn-view-result { background: white; color: var(--primary); border: 2px solid var(--primary); border-radius: 12px; padding: 13px 36px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: all 0.2s; }
   .btn-view-result:hover { background: #EEF3FF; transform: translateY(-1px); }
-  /* ログアウト */
-  .btn-logout {
-    padding: 7px 18px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1.5px solid #D1D5DB;
-    color: #6B7280;
-    background: white;
-    font-family: 'Noto Sans JP', sans-serif;
-    transition: all 0.18s;
-  }
-  .btn-logout:hover { background: #F3F4F6; }
 
-  /* ===== SMARTPHONE TABLE ===== */
-  .smartphone-table {
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 6px;
-  }
-  .sp-row {
-    display: grid;
-    grid-template-columns: 110px 90px 90px 90px;
-    align-items: center;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-    padding: 8px 12px;
-  }
+  .smartphone-table { border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 6px; }
+  .sp-row { display: grid; grid-template-columns: 110px 90px 90px 90px; align-items: center; gap: 0; border-bottom: 1px solid var(--border); padding: 8px 12px; }
   .sp-row:last-child { border-bottom: none; }
-  .sp-row.sp-header {
-    background: #F0F4FF;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 0.5px;
-    padding: 7px 12px;
-  }
+  .sp-row.sp-header { background: #F0F4FF; font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 0.5px; padding: 7px 12px; }
   .sp-row span { display: flex; align-items: center; gap: 4px; font-size: 13px; }
-  .sp-carrier {
-    font-weight: 600;
-    font-size: 13px !important;
-    padding: 2px 8px 2px 0;
-  }
-  .sp-carrier.docomo { color: #E60012; }
-  .sp-carrier.sb     { color: #CC0000; }
-  .sp-carrier.au     { color: #E05A00; }
-  .sp-carrier.ym     { color: #E00074; }
-  .sp-carrier.uq     { color: #008000; }
-  .sp-carrier.mvno   { color: #555; }
-  .sp-num {
-    width: 52px !important;
-    border: 1.5px solid var(--border) !important;
-    border-radius: 7px !important;
-    padding: 5px 6px !important;
-    font-size: 13px !important;
-    text-align: center;
-    background: #FAFBFF;
-    margin-right: 3px;
-  }
+  .sp-carrier { font-weight: 600; font-size: 13px !important; padding: 2px 8px 2px 0; }
+  .sp-carrier.docomo { color: #E60012; } .sp-carrier.sb { color: #CC0000; } .sp-carrier.au { color: #E05A00; }
+  .sp-carrier.ym { color: #E00074; } .sp-carrier.uq { color: #008000; } .sp-carrier.mvno { color: #555; }
+  .sp-num { width: 52px !important; border: 1.5px solid var(--border) !important; border-radius: 7px !important; padding: 5px 6px !important; font-size: 13px !important; text-align: center; background: #FAFBFF; margin-right: 3px; }
   .sp-num:focus { border-color: var(--primary) !important; outline: none; }
-  .sp-switch {
-    border: 1.5px solid var(--border);
-    border-radius: 7px;
-    padding: 5px 6px;
-    font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif;
-    background: #FAFBFF;
-    cursor: pointer;
-    width: 68px;
-    outline: none;
-  }
+  .sp-switch { border: 1.5px solid var(--border); border-radius: 7px; padding: 5px 6px; font-size: 12px; font-family: 'Noto Sans JP', sans-serif; background: #FAFBFF; cursor: pointer; width: 68px; outline: none; }
   .sp-switch:focus { border-color: var(--primary); }
-  @media(max-width: 480px) {
-    .sp-row { grid-template-columns: 90px 76px 76px 76px; font-size: 12px; }
-  }
+  @media(max-width: 480px) { .sp-row { grid-template-columns: 90px 76px 76px 76px; font-size: 12px; } }
 
-  /* ===== MISC ===== */
-  .hint { font-size: 11px; color: var(--text-light); margin-top: 4px; }
-  .interest-meter {
-    display: flex;
-    gap: 6px;
-    margin-top: 4px;
-  }
-  .meter-dot {
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    border: 1.5px solid var(--border);
-    background: #FAFBFF;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-light);
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .meter-dot.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    transform: scale(1.08);
-  }
-  .meter-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    color: var(--text-light);
-    margin-top: 4px;
-  }
+  .interest-meter { display: flex; gap: 6px; margin-top: 4px; }
+  .meter-dot { width: 28px; height: 28px; border-radius: 6px; border: 1.5px solid var(--border); background: #FAFBFF; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--text-light); transition: all 0.15s; user-select: none; }
+  .meter-dot.active { background: var(--primary); border-color: var(--primary); color: white; transform: scale(1.08); }
+  .meter-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-light); margin-top: 4px; }
 </style>
-
 </head>
 <body>
 
@@ -752,7 +365,7 @@
       </div>
       <div class="field">
         <label class="field-label">速度・安定性への満足度 <span class="req">必須</span></label>
-        <div class="star-group" id="speedStars">
+        <div class="star-group">
           <input type="radio" name="speedRating" id="s5" value="5"><label for="s5">★</label>
           <input type="radio" name="speedRating" id="s4" value="4"><label for="s4">★</label>
           <input type="radio" name="speedRating" id="s3" value="3"><label for="s3">★</label>
@@ -763,7 +376,7 @@
       </div>
       <div class="field">
         <label class="field-label">料金への満足度 <span class="req">必須</span></label>
-        <div class="star-group" id="priceStars">
+        <div class="star-group">
           <input type="radio" name="priceRating" id="p5" value="5"><label for="p5">★</label>
           <input type="radio" name="priceRating" id="p4" value="4"><label for="p4">★</label>
           <input type="radio" name="priceRating" id="p3" value="3"><label for="p3">★</label>
@@ -900,7 +513,7 @@
         <div class="section-title">ご意見・ご要望</div>
       </div>
       <div class="field">
-        <label class="field-label">担当スタッフ名 <span class="req">必須</span></label>
+        <label class="field-label">担当スタッフ名(姓のみ) <span class="req">必須</span></label>
         <input type="text" id="staffName" placeholder="例：田中">
       </div>
       <div class="field">
@@ -940,20 +553,10 @@
         <table id="resultTable">
           <thead>
             <tr>
-              <th>#</th>
-              <th>日時</th>
-              <th>世帯人数</th>
-              <th>住居</th>
-              <th>プロバイダ</th>
-              <th>年数</th>
-              <th>月額</th>
-              <th>固定電話</th>
-              <th>テレビ</th>
-              <th>スマホ</th>
-              <th>不満点</th>
-              <th>関心度</th>
-              <th>担当スタッフ</th>
-              <th>スタッフメモ</th>
+              <th>#</th><th>日時</th><th>世帯人数</th><th>住居</th>
+              <th>プロバイダ</th><th>年数</th><th>月額</th><th>固定電話</th>
+              <th>テレビ</th><th>スマホ</th><th>不満点</th><th>関心度</th>
+              <th>担当スタッフ</th><th>スタッフメモ</th>
             </tr>
           </thead>
           <tbody id="resultBody">
@@ -965,7 +568,7 @@
   </div>
 </main>
 
-<div class="toast" id="toast">✅ アンケートを保存しました！</div>
+<div class="toast" id="toast"></div>
 
 <div class="lock-overlay" id="lockOverlay">
   <div class="lock-box">
@@ -986,6 +589,8 @@
 
 <script>
   const STAFF_PASSWORD = '000128';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbx00GAqBBPlfUC04T1HkCefRW1N1bJJ0yaM4R6Ex78mj4IDDP4xYbT9xFt5n7FMd2Y1NA/exec';
+
   let interestValue = 0;
   let isUnlocked = false;
 
@@ -1022,33 +627,34 @@
       });
     return checked.length ? checked.join('、') : '—';
   }
+
   function toggleProviderOther() {
     const cb = document.getElementById('pv7');
     const txt = document.getElementById('providerOtherText');
     txt.style.display = cb.checked ? 'inline-block' : 'none';
     if (cb.checked) txt.focus();
   }
+
   function toggleTvOther() {
-    const rb = document.getElementById('tv4');
     const txt = document.getElementById('tvOtherText');
-    txt.style.display = rb.checked ? 'inline-block' : 'none';
-    if (rb.checked) txt.focus();
+    txt.style.display = document.getElementById('tv4').checked ? 'inline-block' : 'none';
+    if (document.getElementById('tv4').checked) txt.focus();
   }
   document.querySelectorAll('input[name="tv"]').forEach(el => {
     el.addEventListener('change', () => {
-      const txt = document.getElementById('tvOtherText');
-      if (!document.getElementById('tv4').checked) txt.style.display = 'none';
+      if (!document.getElementById('tv4').checked)
+        document.getElementById('tvOtherText').style.display = 'none';
     });
   });
 
   function getSmartphoneData() {
     const carriers = [
-      { id: 'spDocomo', yId: 'spDocomoY', swId: 'spDocomoSw', name: 'ドコモ' },
-      { id: 'spSb',     yId: 'spSbY',     swId: 'spSbSw',     name: 'SB' },
-      { id: 'spAu',     yId: 'spAuY',     swId: 'spAuSw',     name: 'au' },
-      { id: 'spYm',     yId: 'spYmY',     swId: 'spYmSw',     name: 'YM' },
-      { id: 'spUq',     yId: 'spUqY',     swId: 'spUqSw',     name: 'UQ' },
-      { id: 'spMvno',   yId: 'spMvnoY',   swId: 'spMvnoSw',   name: '格安SIM' },
+      { id:'spDocomo', yId:'spDocomoY', swId:'spDocomoSw', name:'ドコモ' },
+      { id:'spSb',     yId:'spSbY',     swId:'spSbSw',     name:'SB' },
+      { id:'spAu',     yId:'spAuY',     swId:'spAuSw',     name:'au' },
+      { id:'spYm',     yId:'spYmY',     swId:'spYmSw',     name:'YM' },
+      { id:'spUq',     yId:'spUqY',     swId:'spUqSw',     name:'UQ' },
+      { id:'spMvno',   yId:'spMvnoY',   swId:'spMvnoSw',   name:'格安SIM' },
     ];
     return carriers.map(c => {
       const num = document.getElementById(c.id)?.value;
@@ -1065,33 +671,31 @@
   }
 
   function submitSurvey() {
-    const household = document.getElementById('household').value;
-    const dwelling = document.querySelector('input[name="dwelling"]:checked');
-    const interest = document.getElementById('interestScore').value;
-    const provider = document.querySelectorAll('#providerField input[type="checkbox"]:checked').length > 0;
-    const years = document.getElementById('providerYears').value.trim();
+    const household  = document.getElementById('household').value;
+    const dwelling   = document.querySelector('input[name="dwelling"]:checked');
+    const interest   = document.getElementById('interestScore').value;
+    const provider   = document.querySelectorAll('#providerField input[type="checkbox"]:checked').length > 0;
+    const years      = document.getElementById('providerYears').value.trim();
     const speedRating = document.querySelector('input[name="speedRating"]:checked');
     const priceRating = document.querySelector('input[name="priceRating"]:checked');
-    const landline = document.querySelector('input[name="landline"]:checked');
-    const tv = document.querySelector('input[name="tv"]:checked');
-    const smartphone = (() => {
-      const ids = ['spDocomo','spSb','spAu','spYm','spUq','spMvno'];
-      return ids.some(id => document.getElementById(id)?.value !== '');
-    })();
-    const staffName = document.getElementById('staffName').value.trim();
+    const landline   = document.querySelector('input[name="landline"]:checked');
+    const tv         = document.querySelector('input[name="tv"]:checked');
+    const smartphone = ['spDocomo','spSb','spAu','spYm','spUq','spMvno']
+                        .some(id => document.getElementById(id)?.value !== '');
+    const staffName  = document.getElementById('staffName').value.trim();
 
     const errors = [];
-    if (!household) errors.push('世帯人数');
-    if (!dwelling) errors.push('お住まい');
-    if (!provider) errors.push('現在のプロバイダ・回線');
-    if (!years) errors.push('利用年数');
+    if (!household)   errors.push('世帯人数');
+    if (!dwelling)    errors.push('お住まい');
+    if (!provider)    errors.push('現在のプロバイダ・回線');
+    if (!years)       errors.push('利用年数');
     if (!speedRating) errors.push('速度・安定性への満足度');
     if (!priceRating) errors.push('料金への満足度');
-    if (!landline) errors.push('ご自宅の固定電話');
-    if (!tv) errors.push('テレビの視聴方法');
-    if (!smartphone) errors.push('スマートフォン');
-    if (!interest) errors.push('関心度');
-    if (!staffName) errors.push('担当スタッフ名');
+    if (!landline)    errors.push('ご自宅の固定電話');
+    if (!tv)          errors.push('テレビの視聴方法');
+    if (!smartphone)  errors.push('スマートフォン');
+    if (!interest)    errors.push('関心度');
+    if (!staffName)   errors.push('担当スタッフ名');
 
     if (errors.length > 0) {
       alert('必須項目を入力してください：\n\n・' + errors.join('\n・'));
@@ -1105,10 +709,10 @@
     const entry = {
       id: Date.now(),
       date: dateStr,
-      household: household,
+      household,
       dwelling: dwelling.value,
       provider: getProviderValue(),
-      years: document.getElementById('providerYears').value ? document.getElementById('providerYears').value + '年' : '—',
+      years: document.getElementById('providerYears').value + '年',
       landline: document.querySelector('input[name="landline"]:checked')?.value || '—',
       tv: (() => {
         const sel = document.querySelector('input[name="tv"]:checked');
@@ -1122,40 +726,39 @@
       smartphone: getSmartphoneData(),
       fee: document.getElementById('monthlyFee').value || '—',
       usages: getCheckedById(['use1','use2','use3','use4','use5','use6']) || '—',
-      speedRating: document.querySelector('input[name="speedRating"]:checked')?.value || '—',
-      priceRating: document.querySelector('input[name="priceRating"]:checked')?.value || '—',
+      speedRating: speedRating?.value || '—',
+      priceRating: priceRating?.value || '—',
       complaints: getCheckedById(['c1','c2','c3','c4','c5','c6']) || '—',
-      interest: interest,
+      interest,
       reasons: getCheckedById(['r1','r2','r3','r4','r5','r6']) || '—',
       freeText: document.getElementById('freeText').value || '—',
-      staffName: document.getElementById('staffName').value || '—',
+      staffName,
     };
 
+    // localStorageに保存
     const existing = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
     existing.push(entry);
     localStorage.setItem('bbSurveys', JSON.stringify(existing));
 
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbyq4vkJV7c-t78n9hUF40JfxofApA6MXG-YHED_yl4vLl5XVo99wTIYY49PRM15c0mV/exec';
-
     showToast('📤 送信中...');
 
-    // ★★★ 修正箇所：Content-Type を text/plain に変更 ★★★
-// ★ GETパラメータとして送信
-const params = encodeURIComponent(JSON.stringify(entry));
-fetch(GAS_URL + '?data=' + params, {
-  method: 'GET',
-  mode: 'no-cors'
-})
-.then(() => {
-  showToast('✅ スプレッドシートに保存しました！');
-  if (isUnlocked) renderTable();
-  resetForm();
-})
-.catch(() => {
-  showToast('⚠️ 端末には保存しました（通信エラー）');
-  if (isUnlocked) renderTable();
-  resetForm();
-});
+    // GASへ送信（text/plainでno-cors）
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(entry)
+    })
+    .then(() => {
+      showToast('✅ スプレッドシートに保存しました！');
+      if (isUnlocked) renderTable();
+      resetForm();
+    })
+    .catch(() => {
+      showToast('⚠️ 端末には保存しました（通信エラー）');
+      if (isUnlocked) renderTable();
+      resetForm();
+    });
   }
 
   function renderTable() {
@@ -1163,12 +766,10 @@ fetch(GAS_URL + '?data=' + params, {
     const tbody = document.getElementById('resultBody');
     document.getElementById('result-section').style.display = 'block';
     document.getElementById('resultCount').textContent = data.length + '件';
-
     if (data.length === 0) {
       tbody.innerHTML = '<tr><td colspan="14" class="no-data">まだデータがありません</td></tr>';
       return;
     }
-
     tbody.innerHTML = data.map((e, i) => `
       <tr>
         <td>${i+1}</td>
@@ -1194,10 +795,9 @@ fetch(GAS_URL + '?data=' + params, {
     if (!data.length) { alert('データがありません'); return; }
     const headers = ['#','日時','担当スタッフ','世帯人数','住居','プロバイダ','年数','月額','固定電話','テレビ','スマホ','利用シーン','速度評価','料金評価','不満点','関心度','検討理由','自由記述'];
     const rows = data.map((e,i) => [i+1,e.date,e.staffName||'—',e.household,e.dwelling,e.provider,e.years||'—',e.fee,e.landline||'—',e.tv||'—',e.smartphone||'—',e.usages,e.speedRating,e.priceRating,e.complaints,e.interest,e.reasons,e.freeText]);
-    const csv = '\uFEFF' + [headers, ...rows].map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
-    const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+    const csv = '\uFEFF' + [headers,...rows].map(r => r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
+    a.href = URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
     a.download = `BBアンケート_${new Date().toLocaleDateString('ja-JP').replace(/\//g,'')}.csv`;
     a.click();
   }
@@ -1205,9 +805,8 @@ fetch(GAS_URL + '?data=' + params, {
   function exportJSON() {
     const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
     if (!data.length) { alert('データがありません'); return; }
-    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
     a.download = `BBアンケート_${Date.now()}.json`;
     a.click();
   }
@@ -1226,12 +825,12 @@ fetch(GAS_URL + '?data=' + params, {
     document.getElementById('progressBar').style.width = '0%';
     document.getElementById('providerOtherText').style.display = 'none';
     document.getElementById('tvOtherText').style.display = 'none';
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({top:0, behavior:'smooth'});
   }
 
   function showToast(msg) {
     const t = document.getElementById('toast');
-    t.textContent = msg || '✅ 保存しました！';
+    t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 3000);
   }
@@ -1243,12 +842,9 @@ fetch(GAS_URL + '?data=' + params, {
     document.getElementById('lockOverlay').classList.add('show');
     setTimeout(() => document.getElementById('lockPassword').focus(), 100);
   }
-  function closeLock() {
-    document.getElementById('lockOverlay').classList.remove('show');
-  }
+  function closeLock() { document.getElementById('lockOverlay').classList.remove('show'); }
   function tryUnlock() {
     const input = document.getElementById('lockPassword').value;
-    const errEl = document.getElementById('lockError');
     if (input === STAFF_PASSWORD) {
       isUnlocked = true;
       closeLock();
@@ -1256,7 +852,7 @@ fetch(GAS_URL + '?data=' + params, {
       renderTable();
       document.getElementById('result-section').scrollIntoView({behavior:'smooth'});
     } else {
-      errEl.textContent = 'パスワードが違います。';
+      document.getElementById('lockError').textContent = 'パスワードが違います。';
       const pw = document.getElementById('lockPassword');
       pw.classList.add('error');
       pw.value = '';
@@ -1274,6 +870,5 @@ fetch(GAS_URL + '?data=' + params, {
 
   document.getElementById('result-section').style.display = 'none';
 </script>
-
 </body>
 </html>
