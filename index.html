@@ -1140,22 +1140,22 @@
     showToast('📤 送信中...');
 
     // ★★★ 修正箇所：Content-Type を text/plain に変更 ★★★
-    fetch(GAS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify(entry)
-    })
-    .then(() => {
-      showToast('✅ スプレッドシートに保存しました！');
-      if (isUnlocked) renderTable();
-      resetForm();
-    })
-    .catch(() => {
-      showToast('⚠️ 端末には保存しました（通信エラー）');
-      if (isUnlocked) renderTable();
-      resetForm();
-    });
+// ★ GETパラメータとして送信
+const params = encodeURIComponent(JSON.stringify(entry));
+fetch(GAS_URL + '?data=' + params, {
+  method: 'GET',
+  mode: 'no-cors'
+})
+.then(() => {
+  showToast('✅ スプレッドシートに保存しました！');
+  if (isUnlocked) renderTable();
+  resetForm();
+})
+.catch(() => {
+  showToast('⚠️ 端末には保存しました（通信エラー）');
+  if (isUnlocked) renderTable();
+  resetForm();
+});
   }
 
   function renderTable() {
