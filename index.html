@@ -123,10 +123,6 @@
     from { opacity:0; transform:translateY(14px); }
     to   { opacity:1; transform:translateY(0); }
   }
-  .section-card:nth-child(2) { animation-delay:.05s; }
-  .section-card:nth-child(3) { animation-delay:.10s; }
-  .section-card:nth-child(4) { animation-delay:.15s; }
-  .section-card:nth-child(5) { animation-delay:.20s; }
 
   .section-header {
     display: flex;
@@ -154,11 +150,7 @@
   }
 
   /* ===== FORM ELEMENTS ===== */
-  .field {
-    margin-bottom: 18px;
-  }
-  .field:last-child { margin-bottom: 0; }
-
+  .field { margin-bottom: 18px; }
   label.field-label {
     display: block;
     font-size: 13px;
@@ -172,11 +164,7 @@
     font-size: 11px;
   }
 
-  input[type="text"],
-  input[type="tel"],
-  input[type="number"],
-  select,
-  textarea {
+  input[type="text"], input[type="tel"], input[type="number"], select, textarea {
     width: 100%;
     border: 1.5px solid var(--border);
     border-radius: 10px;
@@ -204,451 +192,96 @@
   textarea { resize: vertical; min-height: 80px; }
 
   /* Radio / Checkbox */
-  .radio-group, .check-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .radio-group.col, .check-group.col {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .radio-chip, .check-chip {
-    position: relative;
-  }
-  .radio-chip input, .check-chip input {
-    position: absolute; opacity: 0; width:0; height:0;
-  }
+  .radio-group, .check-group { display: flex; flex-wrap: wrap; gap: 10px; }
+  .radio-group.col, .check-group.col { flex-direction: column; gap: 8px; }
+  .radio-chip, .check-chip { position: relative; }
+  .radio-chip input, .check-chip input { position: absolute; opacity: 0; width:0; height:0; }
   .radio-chip label, .check-chip label {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 16px;
-    border-radius: 99px;
-    border: 1.5px solid var(--border);
-    background: #FAFBFF;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 400;
-    transition: all 0.18s;
-    user-select: none;
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 16px; border-radius: 99px;
+    border: 1.5px solid var(--border); background: #FAFBFF;
+    cursor: pointer; font-size: 13px; transition: all 0.18s;
   }
   .radio-chip label::before, .check-chip label::before {
-    content: '';
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-    transition: all 0.18s;
+    content: ''; width: 14px; height: 14px; border-radius: 50%;
+    border: 2px solid var(--border); flex-shrink: 0; transition: all 0.18s;
   }
   .check-chip label::before { border-radius: 4px; }
-
-  .radio-chip input:checked + label,
-  .check-chip input:checked + label {
-    border-color: var(--primary);
-    background: #EEF3FF;
-    color: var(--primary);
-    font-weight: 500;
+  .radio-chip input:checked + label, .check-chip input:checked + label {
+    border-color: var(--primary); background: #EEF3FF; color: var(--primary); font-weight: 500;
   }
-  .radio-chip input:checked + label::before,
-  .check-chip input:checked + label::before {
-    background: var(--primary);
-    border-color: var(--primary);
+  .radio-chip input:checked + label::before, .check-chip input:checked + label::before {
+    background: var(--primary); border-color: var(--primary);
   }
 
   /* Star rating */
-  .star-group {
-    display: flex;
-    gap: 6px;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
+  .star-group { display: flex; gap: 6px; flex-direction: row-reverse; justify-content: flex-end; }
   .star-group input { display: none; }
-  .star-group label {
-    font-size: 30px;
-    cursor: pointer;
-    color: #D1D5DB;
-    transition: color 0.15s, transform 0.15s;
-    line-height: 1;
-  }
-  .star-group input:checked ~ label,
-  .star-group label:hover,
-  .star-group label:hover ~ label {
-    color: #FBBF24;
-    transform: scale(1.15);
-  }
-  .star-label {
-    font-size: 12px;
-    color: var(--text-light);
-    margin-top: 5px;
-  }
+  .star-group label { font-size: 30px; cursor: pointer; color: #D1D5DB; transition: color 0.15s, transform 0.15s; line-height: 1; }
+  .star-group input:checked ~ label, .star-group label:hover, .star-group label:hover ~ label { color: #FBBF24; transform: scale(1.15); }
+  .star-label { font-size: 12px; color: var(--text-light); margin-top: 5px; }
 
   /* Two columns */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media(max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
 
   /* ===== SUBMIT BUTTON ===== */
-  .btn-area {
-    text-align: center;
-    margin-top: 28px;
-  }
+  .btn-area { text-align: center; margin-top: 28px; }
   .btn-submit {
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 16px 52px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 1px;
+    background: var(--primary); color: white; border: none; border-radius: 12px;
+    padding: 16px 52px; font-family: 'Noto Sans JP', sans-serif; font-size: 16px;
+    font-weight: 700; cursor: pointer; letter-spacing: 1px;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     box-shadow: 0 4px 18px rgba(0,87,255,0.28);
   }
-  .btn-submit:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(0,87,255,0.32);
-  }
-  .btn-submit:active { transform: translateY(0); }
+  .btn-submit:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,87,255,0.32); }
 
   /* ===== RESULT TABLE ===== */
-  #result-section {
-    display: none;
-    margin-top: 36px;
-  }
-  .result-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .result-header {
-    background: var(--primary);
-    color: white;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .result-header h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  .result-count {
-    font-size: 13px;
-    opacity: 0.85;
-  }
-  .result-actions {
-    padding: 14px 24px;
-    background: #F8FAFF;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .btn-small {
-    padding: 7px 18px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1.5px solid var(--primary);
-    font-family: 'Noto Sans JP', sans-serif;
-    transition: all 0.18s;
-  }
+  #result-section { display: none; margin-top: 36px; }
+  .result-card { background: white; border-radius: 16px; box-shadow: var(--card-shadow); border: 1px solid var(--border); overflow: hidden; }
+  .result-header { background: var(--primary); color: white; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .result-header h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; }
+  .result-count { font-size: 13px; opacity: 0.85; }
+  .result-actions { padding: 14px 24px; background: #F8FAFF; border-bottom: 1px solid var(--border); display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-small { padding: 7px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: 1.5px solid var(--primary); transition: all 0.18s; }
   .btn-small.primary { background: var(--primary); color: white; }
-  .btn-small.primary:hover { background: var(--primary-dark); }
   .btn-small.outline { background: white; color: var(--primary); }
-  .btn-small.outline:hover { background: #EEF3FF; }
   .btn-small.danger { border-color: var(--accent); color: var(--accent); background: white; }
-  .btn-small.danger:hover { background: #FFF0ED; }
 
   .table-wrap { overflow-x: auto; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    min-width: 720px;
-  }
-  thead th {
-    background: #F0F4FF;
-    padding: 11px 14px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    color: var(--primary);
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--border);
-    white-space: nowrap;
-  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 720px; }
+  thead th { background: #F0F4FF; padding: 11px 14px; text-align: left; font-weight: 600; color: var(--primary); border-bottom: 2px solid var(--border); white-space: nowrap; }
   tbody tr { border-bottom: 1px solid #EEF0F8; transition: background 0.15s; }
   tbody tr:hover { background: #F8FAFF; }
   tbody td { padding: 10px 14px; color: var(--text); vertical-align: top; }
-  .no-data { padding: 36px; text-align: center; color: var(--text-light); font-size: 14px; }
+  .no-data { padding: 36px; text-align: center; color: var(--text-light); }
 
   /* ===== SUCCESS TOAST ===== */
   .toast {
-    position: fixed;
-    bottom: 28px; right: 28px;
-    background: var(--success);
-    color: white;
-    padding: 14px 22px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 6px 24px rgba(0,179,122,0.3);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s;
-    pointer-events: none;
-    z-index: 999;
+    position: fixed; bottom: 28px; right: 28px; background: var(--success); color: white;
+    padding: 14px 22px; border-radius: 12px; font-size: 14px; box-shadow: 0 6px 24px rgba(0,179,122,0.3);
+    opacity: 0; transform: translateY(20px); transition: all 0.3s; z-index: 999;
   }
   .toast.show { opacity: 1; transform: translateY(0); }
 
   /* ===== LOCK MODAL ===== */
-  .lock-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 20, 60, 0.55);
-    backdrop-filter: blur(6px);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-  }
+  .lock-overlay { display: none; position: fixed; inset: 0; background: rgba(10, 20, 60, 0.55); backdrop-filter: blur(6px); z-index: 100; align-items: center; justify-content: center; }
   .lock-overlay.show { display: flex; }
-  .lock-box {
-    background: white;
-    border-radius: 20px;
-    padding: 40px 36px 32px;
-    width: 340px;
-    max-width: 92vw;
-    box-shadow: 0 20px 60px rgba(0,87,255,0.18);
-    text-align: center;
-    animation: fadeUp 0.3s ease;
-  }
-  .lock-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .lock-box h3 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-  }
-  .lock-box p {
-    font-size: 12px;
-    color: var(--text-light);
-    margin-bottom: 20px;
-  }
-  .lock-input-wrap {
-    position: relative;
-    margin-bottom: 14px;
-  }
-  #lockPassword {
-    width: 100%;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 44px 12px 14px;
-    font-size: 18px;
-    letter-spacing: 4px;
-    text-align: center;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    font-family: monospace;
-    background: #FAFBFF;
-  }
-  #lockPassword:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0,87,255,0.10);
-  }
-  #lockPassword.error {
-    border-color: var(--accent);
-    animation: shake 0.35s ease;
-  }
-  @keyframes shake {
-    0%,100%{transform:translateX(0)}
-    20%{transform:translateX(-8px)}
-    40%{transform:translateX(8px)}
-    60%{transform:translateX(-5px)}
-    80%{transform:translateX(5px)}
-  }
-  .toggle-pw {
-    position: absolute;
-    right: 12px; top: 50%;
-    transform: translateY(-50%);
-    background: none; border: none;
-    cursor: pointer; font-size: 18px;
-    color: var(--text-light);
-    padding: 0;
-  }
-  .lock-error-msg {
-    font-size: 12px;
-    color: var(--accent);
-    min-height: 16px;
-    margin-bottom: 12px;
-  }
-  .btn-unlock {
-    width: 100%;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 13px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    margin-bottom: 10px;
-  }
-  .btn-unlock:hover { background: var(--primary-dark); transform: translateY(-1px); }
-  .btn-cancel {
-    background: none; border: none;
-    color: var(--text-light); font-size: 13px;
-    cursor: pointer; font-family: 'Noto Sans JP', sans-serif;
-    text-decoration: underline;
-  }
-  /* 閲覧ボタン */
-  .view-result-btn-wrap {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .btn-view-result {
-    background: white;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    padding: 13px 36px;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: all 0.2s;
-  }
-  .btn-view-result:hover { background: #EEF3FF; transform: translateY(-1px); }
-  /* ログアウト */
-  .btn-logout {
-    padding: 7px 18px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1.5px solid #D1D5DB;
-    color: #6B7280;
-    background: white;
-    font-family: 'Noto Sans JP', sans-serif;
-    transition: all 0.18s;
-  }
-  .btn-logout:hover { background: #F3F4F6; }
+  .lock-box { background: white; border-radius: 20px; padding: 40px 36px 32px; width: 340px; box-shadow: 0 20px 60px rgba(0,87,255,0.18); text-align: center; }
+  #lockPassword { width: 100%; border: 2px solid var(--border); border-radius: 10px; padding: 12px; font-size: 18px; text-align: center; outline: none; margin-bottom: 14px; }
 
-  /* ===== SMARTPHONE TABLE ===== */
-  .smartphone-table {
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 6px;
-  }
-  .sp-row {
-    display: grid;
-    grid-template-columns: 110px 90px 90px 90px;
-    align-items: center;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-    padding: 8px 12px;
-  }
-  .sp-row:last-child { border-bottom: none; }
-  .sp-row.sp-header {
-    background: #F0F4FF;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 0.5px;
-    padding: 7px 12px;
-  }
-  .sp-row span { display: flex; align-items: center; gap: 4px; font-size: 13px; }
-  .sp-carrier {
-    font-weight: 600;
-    font-size: 13px !important;
-    padding: 2px 8px 2px 0;
-  }
-  .sp-carrier.docomo { color: #E60012; }
-  .sp-carrier.sb     { color: #CC0000; }
-  .sp-carrier.au     { color: #E05A00; }
-  .sp-carrier.ym     { color: #E00074; }
-  .sp-carrier.uq     { color: #008000; }
-  .sp-carrier.mvno   { color: #555; }
-  .sp-num {
-    width: 52px !important;
-    border: 1.5px solid var(--border) !important;
-    border-radius: 7px !important;
-    padding: 5px 6px !important;
-    font-size: 13px !important;
-    text-align: center;
-    background: #FAFBFF;
-    margin-right: 3px;
-  }
-  .sp-num:focus { border-color: var(--primary) !important; outline: none; }
-  .sp-switch {
-    border: 1.5px solid var(--border);
-    border-radius: 7px;
-    padding: 5px 6px;
-    font-size: 12px;
-    font-family: 'Noto Sans JP', sans-serif;
-    background: #FAFBFF;
-    cursor: pointer;
-    width: 68px;
-    outline: none;
-  }
-  .sp-switch:focus { border-color: var(--primary); }
-  @media(max-width: 480px) {
-    .sp-row { grid-template-columns: 90px 76px 76px 76px; font-size: 12px; }
-  }
+  /* スマートフォン入力テーブル */
+  .smartphone-table { border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 6px; }
+  .sp-row { display: grid; grid-template-columns: 110px 90px 90px 90px; align-items: center; border-bottom: 1px solid var(--border); padding: 8px 12px; }
+  .sp-row.sp-header { background: #F0F4FF; font-size: 11px; font-weight: 700; color: var(--primary); }
+  .sp-num { width: 52px; border: 1.5px solid var(--border); border-radius: 7px; padding: 5px; text-align: center; }
+  .sp-switch { border: 1.5px solid var(--border); border-radius: 7px; padding: 5px; width: 68px; }
 
-  /* ===== MISC ===== */
-  .hint { font-size: 11px; color: var(--text-light); margin-top: 4px; }
-  .interest-meter {
-    display: flex;
-    gap: 6px;
-    margin-top: 4px;
-  }
-  .meter-dot {
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    border: 1.5px solid var(--border);
-    background: #FAFBFF;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-light);
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .meter-dot.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    transform: scale(1.08);
-  }
-  .meter-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    color: var(--text-light);
-    margin-top: 4px;
-  }
+  /* 関心度メーター */
+  .interest-meter { display: flex; gap: 6px; margin-top: 4px; }
+  .meter-dot { width: 28px; height: 28px; border-radius: 6px; border: 1.5px solid var(--border); background: #FAFBFF; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--text-light); }
+  .meter-dot.active { background: var(--primary); border-color: var(--primary); color: white; }
+  .meter-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-light); margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -669,8 +302,6 @@
   </div>
 
   <form id="surveyForm">
-
-    <!-- Section 1: 基本情報 -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-num">1</div>
@@ -678,43 +309,26 @@
       </div>
       <div class="two-col">
         <div class="field">
-          <label class="field-label">お名前（任意）</label>
-          <input type="text" id="name" placeholder="例：山田 太郎">
-        </div>
-        <div class="field">
-          <label class="field-label">お電話番号（任意）</label>
-          <input type="tel" id="phone" placeholder="例：090-0000-0000">
-        </div>
-      </div>
-      <div class="two-col">
-        <div class="field">
-          <label class="field-label">年代（任意）</label>
-          <select id="age">
-            <option value="">選択してください</option>
-            <option>10代</option><option>20代</option><option>30代</option>
-            <option>40代</option><option>50代</option><option>60代以上</option>
-          </select>
-        </div>
-        <div class="field">
-          <label class="field-label">世帯構成（任意）</label>
+          <label class="field-label">世帯人数 <span class="req">必須</span></label>
           <select id="household">
             <option value="">選択してください</option>
-            <option>一人暮らし</option><option>夫婦のみ</option>
-            <option>家族（子あり）</option><option>その他</option>
+            <option>1人</option>
+            <option>2人</option>
+            <option>3人</option>
+            <option>4人</option>
+            <option>5人以上</option>
           </select>
         </div>
-      </div>
-      <div class="field">
-        <label class="field-label">お住まい <span class="req">必須</span></label>
-        <div class="radio-group">
-          <div class="radio-chip"><input type="radio" name="dwelling" id="d1" value="戸建て"><label for="d1">🏠 戸建て</label></div>
-          <div class="radio-chip"><input type="radio" name="dwelling" id="d2" value="マンション・アパート"><label for="d2">🏢 マンション・アパート</label></div>
-          <div class="radio-chip"><input type="radio" name="dwelling" id="d3" value="その他"><label for="d3">その他</label></div>
+        <div class="field">
+          <label class="field-label">お住まい <span class="req">必須</span></label>
+          <div class="radio-group">
+            <div class="radio-chip"><input type="radio" name="dwelling" id="d1" value="戸建て"><label for="d1">🏠 戸建て</label></div>
+            <div class="radio-chip"><input type="radio" name="dwelling" id="d2" value="マンション・アパート"><label for="d2">🏢 マンション</label></div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Section 2: 現在のネット状況 -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-num">2</div>
@@ -729,165 +343,99 @@
           <div class="check-chip"><input type="checkbox" id="pv4" value="ソフトバンク光"><label for="pv4">🟢 ソフトバンク光</label></div>
           <div class="check-chip"><input type="checkbox" id="pv5" value="ケーブルテレビ"><label for="pv5">📺 ケーブルテレビ</label></div>
           <div class="check-chip"><input type="checkbox" id="pv6" value="ポケットWiFi"><label for="pv6">📡 ポケットWiFi</label></div>
-          <div class="check-chip provider-other-chip">
+          <div class="check-chip">
             <input type="checkbox" id="pv7" value="その他" onchange="toggleProviderOther()">
             <label for="pv7">✏️ その他</label>
-            <input type="text" id="providerOtherText" placeholder="回線名を入力" style="display:none;margin-left:8px;border:1.5px solid var(--border);border-radius:8px;padding:4px 10px;font-size:13px;outline:none;width:160px;">
+            <input type="text" id="providerOtherText" placeholder="回線名を入力" style="display:none;margin-left:8px;border:1.5px solid var(--border);border-radius:8px;padding:4px 10px;font-size:13px;width:160px;">
           </div>
           <div class="check-chip"><input type="checkbox" id="pv8" value="利用なし"><label for="pv8">🚫 利用なし</label></div>
         </div>
-        <div style="margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-          <label class="field-label" style="margin:0;white-space:nowrap;">利用年数 <span class="req">必須</span>（約</label>
-          <input type="number" id="providerYears" min="0" max="30" placeholder="—" style="width:72px;border:1.5px solid var(--border);border-radius:8px;padding:7px 10px;font-size:14px;outline:none;text-align:center;">
-          <span style="font-size:14px;color:var(--text);">年）</span>
+        <div style="margin-top:14px;display:flex;align-items:center;gap:10px;">
+          <label class="field-label" style="margin:0;">利用年数 <span class="req">必須</span>（約</label>
+          <input type="number" id="providerYears" min="0" max="30" placeholder="—" style="width:72px;text-align:center;">
+          <span style="font-size:14px;">年）</span>
         </div>
       </div>
       <div class="field">
         <label class="field-label">月額料金（概算）</label>
         <select id="monthlyFee">
-          <option value="">選択してください（任意）</option>
-          <option>〜2,000円</option><option>2,000〜3,000円</option>
-          <option>3,000〜5,000円</option><option>5,000〜7,000円</option>
-          <option>7,000円以上</option><option>わからない</option>
+          <option value="">選択（任意）</option>
+          <option>〜3,000円</option><option>3,000〜5,000円</option>
+          <option>5,000〜7,000円</option><option>7,000円以上</option>
+          <option>わからない</option>
         </select>
-      </div>
-      <div class="field">
-        <label class="field-label">主な利用シーン（複数選択可）</label>
-        <div class="check-group">
-          <div class="check-chip"><input type="checkbox" id="use1" value="動画視聴"><label for="use1">📺 動画視聴</label></div>
-          <div class="check-chip"><input type="checkbox" id="use2" value="テレワーク・在宅勤務"><label for="use2">💻 テレワーク</label></div>
-          <div class="check-chip"><input type="checkbox" id="use3" value="ゲーム"><label for="use3">🎮 ゲーム</label></div>
-          <div class="check-chip"><input type="checkbox" id="use4" value="SNS・メール"><label for="use4">📱 SNS・メール</label></div>
-          <div class="check-chip"><input type="checkbox" id="use5" value="Web閲覧"><label for="use5">🌐 Web閲覧</label></div>
-          <div class="check-chip"><input type="checkbox" id="use6" value="IoT・スマートホーム"><label for="use6">🏠 IoT・スマートホーム</label></div>
-        </div>
       </div>
     </div>
 
-    <!-- Section 3: 満足度 -->
     <div class="section-card">
-      <div class="section-header">
-        <div class="section-num">3</div>
-        <div class="section-title">現在の回線への満足度</div>
-      </div>
-      <div class="field">
-        <label class="field-label">速度・安定性への満足度 <span class="req">必須</span></label>
-        <div class="star-group" id="speedStars">
-          <input type="radio" name="speedRating" id="s5" value="5"><label for="s5">★</label>
-          <input type="radio" name="speedRating" id="s4" value="4"><label for="s4">★</label>
-          <input type="radio" name="speedRating" id="s3" value="3"><label for="s3">★</label>
-          <input type="radio" name="speedRating" id="s2" value="2"><label for="s2">★</label>
-          <input type="radio" name="speedRating" id="s1" value="1"><label for="s1">★</label>
+      <div class="section-header"><div class="section-num">3</div><div class="section-title">満足度と不満点</div></div>
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label">速度の満足度 <span class="req">必須</span></label>
+          <div class="star-group" id="speedStars">
+            <input type="radio" name="speedRating" id="s5" value="5"><label for="s5">★</label>
+            <input type="radio" name="speedRating" id="s4" value="4"><label for="s4">★</label>
+            <input type="radio" name="speedRating" id="s3" value="3"><label for="s3">★</label>
+            <input type="radio" name="speedRating" id="s2" value="2"><label for="s2">★</label>
+            <input type="radio" name="speedRating" id="s1" value="1"><label for="s1">★</label>
+          </div>
         </div>
-        <div class="star-label">1〜5で評価（5が最高）</div>
-      </div>
-      <div class="field">
-        <label class="field-label">料金への満足度 <span class="req">必須</span></label>
-        <div class="star-group" id="priceStars">
-          <input type="radio" name="priceRating" id="p5" value="5"><label for="p5">★</label>
-          <input type="radio" name="priceRating" id="p4" value="4"><label for="p4">★</label>
-          <input type="radio" name="priceRating" id="p3" value="3"><label for="p3">★</label>
-          <input type="radio" name="priceRating" id="p2" value="2"><label for="p2">★</label>
-          <input type="radio" name="priceRating" id="p1" value="1"><label for="p1">★</label>
+        <div class="field">
+          <label class="field-label">料金の満足度 <span class="req">必須</span></label>
+          <div class="star-group" id="priceStars">
+            <input type="radio" name="priceRating" id="p5" value="5"><label for="p5">★</label>
+            <input type="radio" name="priceRating" id="p4" value="4"><label for="p4">★</label>
+            <input type="radio" name="priceRating" id="p3" value="3"><label for="p3">★</label>
+            <input type="radio" name="priceRating" id="p2" value="2"><label for="p2">★</label>
+            <input type="radio" name="priceRating" id="p1" value="1"><label for="p1">★</label>
+          </div>
         </div>
-        <div class="star-label">1〜5で評価（5が最高）</div>
       </div>
       <div class="field">
-        <label class="field-label">現在の回線で不満な点</label>
+        <label class="field-label">不満な点</label>
         <div class="check-group col">
-          <div class="check-chip"><input type="checkbox" id="c1" value="速度が遅い"><label for="c1">⚡ 速度が遅い・重い</label></div>
+          <div class="check-chip"><input type="checkbox" id="c1" value="速度が遅い"><label for="c1">⚡ 速度が遅い</label></div>
           <div class="check-chip"><input type="checkbox" id="c2" value="料金が高い"><label for="c2">💰 料金が高い</label></div>
-          <div class="check-chip"><input type="checkbox" id="c3" value="接続が不安定"><label for="c3">📶 接続が不安定・よく切れる</label></div>
-          <div class="check-chip"><input type="checkbox" id="c4" value="サポートが悪い"><label for="c4">🎧 サポート対応が悪い</label></div>
-          <div class="check-chip"><input type="checkbox" id="c5" value="工事が面倒"><label for="c5">🔧 工事・手続きが面倒そう</label></div>
+          <div class="check-chip"><input type="checkbox" id="c3" value="接続が不安定"><label for="c3">📶 接続が不安定</label></div>
           <div class="check-chip"><input type="checkbox" id="c6" value="特になし"><label for="c6">👍 特に不満なし</label></div>
         </div>
       </div>
     </div>
 
-    <!-- Section 4: 電話・テレビ・スマホ -->
     <div class="section-card">
-      <div class="section-header">
-        <div class="section-num">4</div>
-        <div class="section-title">固定電話・テレビ・スマートフォン</div>
-      </div>
-      <div class="field">
-        <label class="field-label">ご自宅の固定電話 <span class="req">必須</span></label>
-        <div class="radio-group">
-          <div class="radio-chip"><input type="radio" name="landline" id="ll1" value="NTT電話"><label for="ll1">📞 NTT電話</label></div>
-          <div class="radio-chip"><input type="radio" name="landline" id="ll2" value="au電話"><label for="ll2">📞 au電話</label></div>
-          <div class="radio-chip"><input type="radio" name="landline" id="ll3" value="ケーブルテレビ電話"><label for="ll3">📞 ケーブルテレビ</label></div>
-          <div class="radio-chip"><input type="radio" name="landline" id="ll4" value="なし"><label for="ll4">🚫 なし</label></div>
+      <div class="section-header"><div class="section-num">4</div><div class="section-title">固定電話・テレビ・スマホ</div></div>
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label">固定電話 <span class="req">必須</span></label>
+          <select id="landlineSelect">
+            <option value="">選択してください</option>
+            <option>NTT電話</option><option>ひかり電話</option><option>なし</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label">テレビ視聴 <span class="req">必須</span></label>
+          <select id="tvSelect">
+            <option value="">選択してください</option>
+            <option>アンテナ</option><option>光テレビ</option><option>ケーブル</option><option>なし</option>
+          </select>
         </div>
       </div>
       <div class="field">
-        <label class="field-label">テレビの視聴方法 <span class="req">必須</span></label>
-        <div class="radio-group">
-          <div class="radio-chip"><input type="radio" name="tv" id="tv1" value="アンテナ"><label for="tv1">📡 アンテナ</label></div>
-          <div class="radio-chip"><input type="radio" name="tv" id="tv2" value="光テレビ"><label for="tv2">💡 光</label></div>
-          <div class="radio-chip"><input type="radio" name="tv" id="tv3" value="ケーブル"><label for="tv3">🔌 ケーブル</label></div>
-          <div class="radio-chip">
-            <input type="radio" name="tv" id="tv4" value="その他" onchange="toggleTvOther()">
-            <label for="tv4">✏️ その他</label>
-            <input type="text" id="tvOtherText" placeholder="視聴方法を入力" style="display:none;margin-left:8px;border:1.5px solid var(--border);border-radius:8px;padding:4px 10px;font-size:13px;outline:none;width:140px;">
-          </div>
-          <div class="radio-chip"><input type="radio" name="tv" id="tv5" value="利用なし"><label for="tv5">🚫 利用なし</label></div>
-        </div>
-      </div>
-      <div class="field">
-        <label class="field-label">ご家族のスマートフォン（台数・利用年数・乗換予定） <span class="req">必須</span></label>
+        <label class="field-label">ご家族のスマホ（台数） <span class="req">必須</span></label>
         <div class="smartphone-table">
-          <div class="sp-row sp-header">
-            <span>キャリア</span><span>台数</span><span>利用年数</span><span>乗換予定</span>
-          </div>
-          <div class="sp-row">
-            <span class="sp-carrier docomo">📱 ドコモ</span>
-            <span><input type="number" class="sp-num" id="spDocomo" min="0" max="20" placeholder="—">台</span>
-            <span><input type="number" class="sp-num" id="spDocomoY" min="0" max="30" placeholder="—">年</span>
-            <span><select class="sp-switch" id="spDocomoSw"><option value="">—</option><option>有り</option><option>無し</option></select></span>
-          </div>
-          <div class="sp-row">
-            <span class="sp-carrier sb">📱 SB</span>
-            <span><input type="number" class="sp-num" id="spSb" min="0" max="20" placeholder="—">台</span>
-            <span><input type="number" class="sp-num" id="spSbY" min="0" max="30" placeholder="—">年</span>
-            <span><select class="sp-switch" id="spSbSw"><option value="">—</option><option>有り</option><option>無し</option></select></span>
-          </div>
-          <div class="sp-row">
-            <span class="sp-carrier au">📱 au</span>
-            <span><input type="number" class="sp-num" id="spAu" min="0" max="20" placeholder="—">台</span>
-            <span><input type="number" class="sp-num" id="spAuY" min="0" max="30" placeholder="—">年</span>
-            <span><select class="sp-switch" id="spAuSw"><option value="">—</option><option>有り</option><option>無し</option></select></span>
-          </div>
-          <div class="sp-row">
-            <span class="sp-carrier ym">📱 YM</span>
-            <span><input type="number" class="sp-num" id="spYm" min="0" max="20" placeholder="—">台</span>
-            <span><input type="number" class="sp-num" id="spYmY" min="0" max="30" placeholder="—">年</span>
-            <span><select class="sp-switch" id="spYmSw"><option value="">—</option><option>有り</option><option>無し</option></select></span>
-          </div>
-          <div class="sp-row">
-            <span class="sp-carrier uq">📱 UQ</span>
-            <span><input type="number" class="sp-num" id="spUq" min="0" max="20" placeholder="—">台</span>
-            <span><input type="number" class="sp-num" id="spUqY" min="0" max="30" placeholder="—">年</span>
-            <span><select class="sp-switch" id="spUqSw"><option value="">—</option><option>有り</option><option>無し</option></select></span>
-          </div>
-          <div class="sp-row">
-            <span class="sp-carrier mvno">📱 格安SIM</span>
-            <span><input type="number" class="sp-num" id="spMvno" min="0" max="20" placeholder="—">台</span>
-            <span><input type="number" class="sp-num" id="spMvnoY" min="0" max="30" placeholder="—">年</span>
-            <span><select class="sp-switch" id="spMvnoSw"><option value="">—</option><option>有り</option><option>無し</option></select></span>
-          </div>
+          <div class="sp-row sp-header"><span>キャリア</span><span>台数</span><span>利用年数</span><span>乗換予定</span></div>
+          <div class="sp-row"><span>📱 ドコモ</span><span><input type="number" class="sp-num" id="spDocomo">台</span><span><input type="number" class="sp-num" id="spDocomoY">年</span><span><select class="sp-switch" id="spDocomoSw"><option value="">-</option><option>有</option><option>無</option></select></span></div>
+          <div class="sp-row"><span>📱 SB</span><span><input type="number" class="sp-num" id="spSb">台</span><span><input type="number" class="sp-num" id="spSbY">年</span><span><select class="sp-switch" id="spSbSw"><option value="">-</option><option>有</option><option>無</option></select></span></div>
+          <div class="sp-row"><span>📱 au</span><span><input type="number" class="sp-num" id="spAu">台</span><span><input type="number" class="sp-num" id="spAuY">年</span><span><select class="sp-switch" id="spAuSw"><option value="">-</option><option>有</option><option>無</option></select></span></div>
+          <div class="sp-row"><span>📱 UQ/YM</span><span><input type="number" class="sp-num" id="spUqYm">台</span><span><input type="number" class="sp-num" id="spUqYmY">年</span><span><select class="sp-switch" id="spUqYmSw"><option value="">-</option><option>有</option><option>無</option></select></span></div>
         </div>
       </div>
     </div>
 
-    <!-- Section 5: 乗り換え意欲 -->
     <div class="section-card">
-      <div class="section-header">
-        <div class="section-num">5</div>
-        <div class="section-title">乗り換え・新規契約への関心</div>
-      </div>
+      <div class="section-header"><div class="section-num">5</div><div class="section-title">乗り換えへの関心</div></div>
       <div class="field">
-        <label class="field-label">乗り換え・新規契約への関心度 <span class="req">必須</span></label>
+        <label class="field-label">乗り換えへの関心度 (1-10) <span class="req">必須</span></label>
         <div class="interest-meter" id="interestMeter">
           <div class="meter-dot" data-val="1" onclick="setInterest(1)">1</div>
           <div class="meter-dot" data-val="2" onclick="setInterest(2)">2</div>
@@ -900,440 +448,170 @@
           <div class="meter-dot" data-val="9" onclick="setInterest(9)">9</div>
           <div class="meter-dot" data-val="10" onclick="setInterest(10)">10</div>
         </div>
-        <div class="meter-labels"><span>全く興味なし</span><span>非常に興味あり</span></div>
         <input type="hidden" id="interestScore" value="">
-      </div>
-      <div class="field">
-        <label class="field-label">乗り換えを検討する理由（複数選択可）</label>
-        <div class="check-group">
-          <div class="check-chip"><input type="checkbox" id="r1" value="料金を安くしたい"><label for="r1">💰 料金節約</label></div>
-          <div class="check-chip"><input type="checkbox" id="r2" value="速度を上げたい"><label for="r2">⚡ 速度向上</label></div>
-          <div class="check-chip"><input type="checkbox" id="r3" value="スマホとセット割"><label for="r3">📱 スマホセット割</label></div>
-          <div class="check-chip"><input type="checkbox" id="r4" value="引っ越し予定"><label for="r4">🚛 引っ越し予定</label></div>
-          <div class="check-chip"><input type="checkbox" id="r5" value="キャッシュバック"><label for="r5">🎁 キャッシュバック</label></div>
-          <div class="check-chip"><input type="checkbox" id="r6" value="テレワーク対応"><label for="r6">💼 テレワーク対応</label></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 6: 自由記述 -->
-    <div class="section-card">
-      <div class="section-header">
-        <div class="section-num">6</div>
-        <div class="section-title">ご意見・ご要望</div>
       </div>
       <div class="field">
         <label class="field-label">担当スタッフ名 <span class="req">必須</span></label>
         <input type="text" id="staffName" placeholder="例：田中">
       </div>
-      <div class="field">
-        <label class="field-label">スタッフへのメッセージ・ご質問など</label>
-        <textarea id="freeText" placeholder="例：具体的な料金を教えてほしい、キャンペーンについて知りたい、工事の日程はいつ頃になるか etc."></textarea>
-      </div>
-      <div class="field">
-        <label class="field-label">アンケートへのご協力日時</label>
-        <input type="text" id="visitDate" placeholder="例：2024年4月1日 14:30">
-      </div>
     </div>
 
     <div class="btn-area">
-      <button type="button" class="btn-submit" onclick="submitSurvey()">
-        📋 アンケートを保存する
-      </button>
+      <button type="button" class="btn-submit" onclick="submitSurvey()">📋 アンケートを保存する</button>
     </div>
   </form>
 
-  <!-- 一覧を見るボタン -->
-  <div class="view-result-btn-wrap">
-    <button class="btn-view-result" onclick="openLock()">スタッフ用</button>
+  <div class="view-result-btn-wrap" style="text-align:center; margin-top:20px;">
+    <button class="btn-small outline" onclick="openLock()">🔒 保存済みデータを確認</button>
   </div>
 
-  <!-- 結果表示 -->
   <div id="result-section">
     <div class="result-card">
-      <div class="result-header">
-        <h2>📊 保存済みアンケート一覧</h2>
-        <span class="result-count" id="resultCount">0件</span>
-      </div>
+      <div class="result-header"><h2>📊 アンケート一覧</h2><span class="result-count" id="resultCount">0件</span></div>
       <div class="result-actions">
         <button class="btn-small primary" onclick="exportCSV()">⬇ CSV出力</button>
-        <button class="btn-small outline" onclick="exportJSON()">⬇ JSONエクスポート</button>
-        <button class="btn-small danger" onclick="clearAll()">🗑 全件削除</button>
-        <button class="btn-logout" onclick="lockResult()">🔒 ロック</button>
+        <button class="btn-small danger" onclick="clearAll()">🗑 全削除</button>
       </div>
       <div class="table-wrap">
         <table id="resultTable">
           <thead>
             <tr>
-              <th>#</th>
-              <th>日時</th>
-              <th>お名前</th>
-              <th>年代</th>
-              <th>世帯</th>
-              <th>住居</th>
-              <th>プロバイダ</th>
-              <th>年数</th>
-              <th>月額</th>
-              <th>固定電話</th>
-              <th>テレビ</th>
-              <th>スマホ</th>
-              <th>不満点</th>
-              <th>関心度</th>
-              <th>担当スタッフ</th>
-              <th>スタッフメモ</th>
+              <th>日時</th><th>世帯人数</th><th>住居</th><th>プロバイダ</th><th>年数</th><th>月額</th><th>電話/TV</th><th>スマホ</th><th>関心度</th><th>担当</th>
             </tr>
           </thead>
-          <tbody id="resultBody">
-            <tr><td colspan="15" class="no-data">まだデータがありません</td></tr>
-          </tbody>
+          <tbody id="resultBody"></tbody>
         </table>
       </div>
     </div>
   </div>
 </main>
 
-<div class="toast" id="toast">✅ アンケートを保存しました！</div>
+<div class="toast" id="toast">✅ 保存しました</div>
 
-<!-- パスワードロックモーダル -->
 <div class="lock-overlay" id="lockOverlay">
   <div class="lock-box">
-    <span class="lock-icon">🔐</span>
-    <h3>スタッフ専用画面</h3>
-    <p>パスワードを入力してください</p>
-    <div class="lock-input-wrap">
-      <input type="password" id="lockPassword" maxlength="20"
-        placeholder="••••••" onkeydown="if(event.key==='Enter')tryUnlock()">
-      <button class="toggle-pw" onclick="togglePwVisibility()" title="表示/非表示">👁</button>
-    </div>
-    <div class="lock-error-msg" id="lockError"></div>
-    <button class="btn-unlock" onclick="tryUnlock()">🔓 ロック解除</button>
-    <br>
-    <button class="btn-cancel" onclick="closeLock()">キャンセル</button>
+    <h3>スタッフ認証</h3>
+    <input type="password" id="lockPassword" placeholder="パスワードを入力">
+    <button class="btn-submit" style="width:100%; padding:10px;" onclick="tryUnlock()">解除</button>
+    <p style="margin-top:10px; cursor:pointer; font-size:12px; text-decoration:underline;" onclick="closeLock()">キャンセル</p>
   </div>
 </div>
 
 <script>
-  // ===== パスワード設定（ここを変更してください） =====
   const STAFF_PASSWORD = '000128';
-  // ===================================================
-
   let interestValue = 0;
   let isUnlocked = false;
 
-  // プログレスバー
-  function updateProgress() {
-    const required = [
-      document.getElementById('age').value,
-      document.getElementById('household').value,
-      document.querySelector('input[name="dwelling"]:checked'),
-      document.querySelector('input[name="using"]:checked'),
-      document.getElementById('interestScore').value
-    ];
-    const filled = required.filter(v => v && v !== '').length;
-    document.getElementById('progressBar').style.width = (filled / required.length * 100) + '%';
-  }
-  document.querySelectorAll('select, input[type="radio"], input[type="checkbox"]')
-    .forEach(el => el.addEventListener('change', updateProgress));
-
-  // 関心度メーター
   function setInterest(val) {
     interestValue = val;
     document.getElementById('interestScore').value = val;
     document.querySelectorAll('.meter-dot').forEach(dot => {
       dot.classList.toggle('active', parseInt(dot.dataset.val) <= val);
     });
-    updateProgress();
   }
 
-  // プロバイダ値取得
-  function getProviderValue() {
-    const checked = ['pv1','pv2','pv3','pv4','pv5','pv6','pv7','pv8']
-      .filter(id => document.getElementById(id)?.checked)
-      .map(id => {
-        if (id === 'pv7') {
-          const other = document.getElementById('providerOtherText').value.trim();
-          return other ? 'その他(' + other + ')' : 'その他';
-        }
-        return document.getElementById(id).value;
-      });
-    return checked.length ? checked.join('、') : '—';
-  }
   function toggleProviderOther() {
     const cb = document.getElementById('pv7');
     const txt = document.getElementById('providerOtherText');
     txt.style.display = cb.checked ? 'inline-block' : 'none';
-    if (cb.checked) txt.focus();
   }
-  function toggleTvOther() {
-    const rb = document.getElementById('tv4');
-    const txt = document.getElementById('tvOtherText');
-    txt.style.display = rb.checked ? 'inline-block' : 'none';
-    if (rb.checked) txt.focus();
-  }
-  document.querySelectorAll('input[name="tv"]').forEach(el => {
-    el.addEventListener('change', () => {
-      const txt = document.getElementById('tvOtherText');
-      if (!document.getElementById('tv4').checked) txt.style.display = 'none';
-    });
-  });
 
   function getSmartphoneData() {
-    const carriers = [
-      { id: 'spDocomo', yId: 'spDocomoY', swId: 'spDocomoSw', name: 'ドコモ' },
-      { id: 'spSb',     yId: 'spSbY',     swId: 'spSbSw',     name: 'SB' },
-      { id: 'spAu',     yId: 'spAuY',     swId: 'spAuSw',     name: 'au' },
-      { id: 'spYm',     yId: 'spYmY',     swId: 'spYmSw',     name: 'YM' },
-      { id: 'spUq',     yId: 'spUqY',     swId: 'spUqSw',     name: 'UQ' },
-      { id: 'spMvno',   yId: 'spMvnoY',   swId: 'spMvnoSw',   name: '格安SIM' },
+    const list = [
+      {id:'spDocomo', n:'ドコモ'}, {id:'spSb', n:'SB'}, 
+      {id:'spAu', n:'au'}, {id:'spUqYm', n:'格安'}
     ];
-    return carriers.map(c => {
-      const num = document.getElementById(c.id)?.value;
-      const yr  = document.getElementById(c.yId)?.value;
-      const sw  = document.getElementById(c.swId)?.value;
-      if (!num && !yr && !sw) return null;
-      return `${c.name}:${num||'—'}台/${yr||'—'}年/乗換${sw||'—'}`;
-    }).filter(Boolean).join(' | ') || '—';
+    return list.map(c => {
+      const num = document.getElementById(c.id).value;
+      return num ? `${c.n}:${num}台` : null;
+    }).filter(Boolean).join('/') || '—';
   }
 
-  // チェックボックス値取得
-  function getChecked(name) {
-    return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(e => e.value).join('、');
-  }
-  function getCheckedById(ids) {
-    return ids.filter(id => document.getElementById(id)?.checked)
-              .map(id => document.getElementById(id).value).join('、');
-  }
-
-  // 送信
   function submitSurvey() {
-    // バリデーション
-    const age = document.getElementById('age').value;
     const household = document.getElementById('household').value;
     const dwelling = document.querySelector('input[name="dwelling"]:checked');
+    const provider = document.querySelectorAll('#providerField input[type="checkbox"]:checked').length > 0;
+    const years = document.getElementById('providerYears').value;
+    const staff = document.getElementById('staffName').value;
     const interest = document.getElementById('interestScore').value;
 
-    // 追加必須チェック
-    const provider = document.querySelectorAll('#providerField input[type="checkbox"]:checked').length > 0;
-    const years = document.getElementById('providerYears').value.trim();
-    const speedRating = document.querySelector('input[name="speedRating"]:checked');
-    const priceRating = document.querySelector('input[name="priceRating"]:checked');
-    const landline = document.querySelector('input[name="landline"]:checked');
-    const tv = document.querySelector('input[name="tv"]:checked');
-    const smartphone = (() => {
-      const ids = ['spDocomo','spSb','spAu','spYm','spUq','spMvno'];
-      return ids.some(id => document.getElementById(id)?.value !== '');
-    })();
-    const staffName = document.getElementById('staffName').value.trim();
-
-    const errors = [];
-    if (!dwelling) errors.push('お住まい');
-    if (!provider) errors.push('現在のプロバイダ・回線');
-    if (!years) errors.push('利用年数');
-    if (!speedRating) errors.push('速度・安定性への満足度');
-    if (!priceRating) errors.push('料金への満足度');
-    if (!landline) errors.push('ご自宅の固定電話');
-    if (!tv) errors.push('テレビの視聴方法');
-    if (!smartphone) errors.push('スマートフォン（いずれかのキャリアの台数）');
-    if (!interest) errors.push('乗り換え・新規契約への関心度');
-    if (!staffName) errors.push('担当スタッフ名');
-
-    if (errors.length > 0) {
-      alert('以下の必須項目を入力してください：\n\n・' + errors.join('\n・'));
-      return;
+    if(!household || !dwelling || !provider || !years || !staff || !interest) {
+      alert('必須項目を入力してください'); return;
     }
 
-    const now = new Date();
-    const dateStr = document.getElementById('visitDate').value ||
-      `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日 ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-
     const entry = {
-      id: Date.now(),
-      date: dateStr,
-      name: document.getElementById('name').value || '（未記入）',
-      phone: document.getElementById('phone').value || '—',
-      age: age,
+      date: new Date().toLocaleString('ja-JP'),
       household: household,
       dwelling: dwelling.value,
-      provider: getProviderValue(),
-      years: document.getElementById('providerYears').value ? document.getElementById('providerYears').value + '年' : '—',
-      landline: document.querySelector('input[name="landline"]:checked')?.value || '—',
-      tv: (() => {
-        const sel = document.querySelector('input[name="tv"]:checked');
-        if (!sel) return '—';
-        if (sel.value === 'その他') {
-          const t = document.getElementById('tvOtherText').value.trim();
-          return t ? 'その他(' + t + ')' : 'その他';
-        }
-        return sel.value;
-      })(),
-      smartphone: getSmartphoneData(),
+      provider: Array.from(document.querySelectorAll('#providerField input[type="checkbox"]:checked')).map(e => e.value).join(','),
+      years: years + '年',
       fee: document.getElementById('monthlyFee').value || '—',
-      usages: getCheckedById(['use1','use2','use3','use4','use5','use6']) || '—',
-      speedRating: document.querySelector('input[name="speedRating"]:checked')?.value || '—',
-      priceRating: document.querySelector('input[name="priceRating"]:checked')?.value || '—',
-      complaints: getCheckedById(['c1','c2','c3','c4','c5','c6']) || '—',
+      telTv: `${document.getElementById('landlineSelect').value}/${document.getElementById('tvSelect').value}`,
+      smartphone: getSmartphoneData(),
       interest: interest,
-      reasons: getCheckedById(['r1','r2','r3','r4','r5','r6']) || '—',
-      freeText: document.getElementById('freeText').value || '—',
-      staffName: document.getElementById('staffName').value || '—',
+      staff: staff
     };
 
-    // localStorageに保存
-    const existing = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
-    existing.push(entry);
-    localStorage.setItem('bbSurveys', JSON.stringify(existing));
+    const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
+    data.push(entry);
+    localStorage.setItem('bbSurveys', JSON.stringify(data));
 
-    // Googleスプレッドシートに送信
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbyq4vkJV7c-t78n9hUF40JfxofApA6MXG-YHED_yl4vLl5XVo99wTIYY49PRM15c0mV/exec';
-    
-    // 送信中トースト
-    showToast('📤 送信中...');
-
-    fetch(GAS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(entry)
-    })
-    .then(() => {
-      showToast('✅ スプレッドシートに保存しました！');
-      if (isUnlocked) renderTable();
-      resetForm();
-    })
-    .catch(() => {
-      showToast('⚠️ 端末には保存しました（通信エラー）');
-      if (isUnlocked) renderTable();
-      resetForm();
-    });
+    showToast('✅ アンケートを保存しました');
+    document.getElementById('surveyForm').reset();
+    setInterest(0);
+    if(isUnlocked) renderTable();
   }
 
-  // テーブル描画
   function renderTable() {
     const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
     const tbody = document.getElementById('resultBody');
-    document.getElementById('result-section').style.display = 'block';
     document.getElementById('resultCount').textContent = data.length + '件';
-
-    if (data.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="16" class="no-data">まだデータがありません</td></tr>';
-      return;
-    }
-
-    tbody.innerHTML = data.map((e, i) => `
+    tbody.innerHTML = data.map(e => `
       <tr>
-        <td>${i+1}</td>
-        <td>${e.date}</td>
-        <td>${e.name}<br><small style="color:#9CA3AF">${e.phone}</small></td>
-        <td>${e.age}</td>
-        <td>${e.household}</td>
-        <td>${e.dwelling}</td>
-        <td>${e.using}</td>
-        <td>${e.provider}</td>
-        <td>${e.years || '—'}</td>
-        <td>${e.fee}</td>
-        <td>${e.landline || '—'}</td>
-        <td>${e.tv || '—'}</td>
-        <td style="max-width:180px;font-size:11px">${e.smartphone || '—'}</td>
-        <td>${e.complaints}</td>
-        <td style="text-align:center;font-weight:700;color:${+e.interest>=7?'#0057FF':+e.interest>=4?'#FBBF24':'#6B7280'}">${e.interest}/10</td>
-        <td>${e.staffName || '—'}</td>
-        <td style="max-width:160px;font-size:12px">${e.freeText}</td>
+        <td>${e.date}</td><td>${e.household}</td><td>${e.dwelling}</td>
+        <td>${e.provider}</td><td>${e.years}</td><td>${e.fee}</td>
+        <td>${e.telTv}</td><td>${e.smartphone}</td><td>${e.interest}</td><td>${e.staff}</td>
       </tr>
     `).join('');
   }
 
-  // CSV出力
-  function exportCSV() {
-    const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
-    if (!data.length) { alert('データがありません'); return; }
-    const headers = ['#','日時','担当スタッフ','お名前','電話','年代','世帯','住居','プロバイダ','年数','月額','固定電話','テレビ','スマホ','利用シーン','速度評価','料金評価','不満点','関心度','検討理由','自由記述'];
-    const rows = data.map((e,i) => [i+1,e.date,e.staffName||'—',e.name,e.phone,e.age,e.household,e.dwelling,e.provider,e.years||'—',e.fee,e.landline||'—',e.tv||'—',e.smartphone||'—',e.usages,e.speedRating,e.priceRating,e.complaints,e.interest,e.reasons,e.freeText]);
-    const csv = '\uFEFF' + [headers, ...rows].map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
-    const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `BBアンケート_${new Date().toLocaleDateString('ja-JP').replace(/\//g,'')}.csv`;
-    a.click();
-  }
-
-  // JSON出力
-  function exportJSON() {
-    const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
-    if (!data.length) { alert('データがありません'); return; }
-    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `BBアンケート_${Date.now()}.json`;
-    a.click();
-  }
-
-  // 全削除
-  function clearAll() {
-    if (!confirm('保存済みの全データを削除しますか？')) return;
-    localStorage.removeItem('bbSurveys');
-    renderTable();
-  }
-
-  // フォームリセット
-  function resetForm() {
-    document.getElementById('surveyForm').reset();
-    interestValue = 0;
-    document.getElementById('interestScore').value = '';
-    document.querySelectorAll('.meter-dot').forEach(d => d.classList.remove('active'));
-    document.getElementById('progressBar').style.width = '0%';
-    // その他テキスト非表示
-    document.getElementById('providerOtherText').style.display = 'none';
-    document.getElementById('tvOtherText').style.display = 'none';
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-
-  // トースト
-  function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.textContent = msg || '✅ 保存しました！';
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
-  }
-
-  // ===== パスワード認証 =====
-  function openLock() {
-    document.getElementById('lockPassword').value = '';
-    document.getElementById('lockError').textContent = '';
-    document.getElementById('lockPassword').classList.remove('error');
-    document.getElementById('lockOverlay').classList.add('show');
-    setTimeout(() => document.getElementById('lockPassword').focus(), 100);
-  }
-  function closeLock() {
-    document.getElementById('lockOverlay').classList.remove('show');
-  }
+  function openLock() { document.getElementById('lockOverlay').classList.add('show'); }
+  function closeLock() { document.getElementById('lockOverlay').classList.remove('show'); }
   function tryUnlock() {
-    const input = document.getElementById('lockPassword').value;
-    const errEl = document.getElementById('lockError');
-    if (input === STAFF_PASSWORD) {
+    if(document.getElementById('lockPassword').value === STAFF_PASSWORD) {
       isUnlocked = true;
       closeLock();
       document.getElementById('result-section').style.display = 'block';
       renderTable();
-      document.getElementById('result-section').scrollIntoView({behavior:'smooth'});
-    } else {
-      errEl.textContent = 'パスワードが違います。もう一度お試しください。';
-      const pw = document.getElementById('lockPassword');
-      pw.classList.add('error');
-      pw.value = '';
-      setTimeout(() => pw.classList.remove('error'), 600);
-    }
-  }
-  function lockResult() {
-    isUnlocked = false;
-    document.getElementById('result-section').style.display = 'none';
-  }
-  function togglePwVisibility() {
-    const el = document.getElementById('lockPassword');
-    el.type = el.type === 'password' ? 'text' : 'password';
+    } else { alert('パスワードが違います'); }
   }
 
-  // 初期化（一覧は非表示のまま）
-  document.getElementById('result-section').style.display = 'none';
+  function exportCSV() {
+    const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
+    let csv = '\uFEFF日時,世帯人数,住居,プロバイダ,年数,月額,電話TV,スマホ,関心度,スタッフ\n';
+    data.forEach(e => {
+      csv += `${e.date},${e.household},${e.dwelling},"${e.provider}",${e.years},${e.fee},${e.telTv},${e.smartphone},${e.interest},${e.staff}\n`;
+    });
+    const blob = new Blob([csv], {type:'text/csv'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'survey_data.csv';
+    a.click();
+  }
+
+  function clearAll() {
+    if(confirm('全データを削除しますか？')) {
+      localStorage.removeItem('bbSurveys');
+      renderTable();
+    }
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
 </script>
+
 </body>
 </html>
