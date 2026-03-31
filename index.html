@@ -1136,12 +1136,14 @@
     localStorage.setItem('bbSurveys', JSON.stringify(existing));
 
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbyq4vkJV7c-t78n9hUF40JfxofApA6MXG-YHED_yl4vLl5XVo99wTIYY49PRM15c0mV/exec';
-    
+
     showToast('📤 送信中...');
+
+    // ★★★ 修正箇所：Content-Type を text/plain に変更 ★★★
     fetch(GAS_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(entry)
     })
     .then(() => {
