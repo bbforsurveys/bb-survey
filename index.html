@@ -98,7 +98,6 @@
   .section-card:nth-child(2) { animation-delay:.05s; }
   .section-card:nth-child(3) { animation-delay:.10s; }
   .section-card:nth-child(4) { animation-delay:.15s; }
-  .section-card:nth-child(5) { animation-delay:.20s; }
 
   .section-header {
     display: flex; align-items: center; gap: 12px;
@@ -154,17 +153,6 @@
     background: var(--primary); border-color: var(--primary);
   }
 
-  .star-group { display: flex; gap: 6px; flex-direction: row-reverse; justify-content: flex-end; }
-  .star-group input { display: none; }
-  .star-group label {
-    font-size: 30px; cursor: pointer; color: #D1D5DB;
-    transition: color 0.15s, transform 0.15s; line-height: 1;
-  }
-  .star-group input:checked ~ label, .star-group label:hover, .star-group label:hover ~ label {
-    color: #FBBF24; transform: scale(1.15);
-  }
-  .star-label { font-size: 12px; color: var(--text-light); margin-top: 5px; }
-
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media(max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
 
@@ -196,7 +184,7 @@
   .btn-logout:hover { background: #F3F4F6; }
 
   .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 720px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 620px; }
   thead th { background: #F0F4FF; padding: 11px 14px; text-align: left; font-weight: 600; font-size: 12px; color: var(--primary); letter-spacing: 0.5px; border-bottom: 2px solid var(--border); white-space: nowrap; }
   tbody tr { border-bottom: 1px solid #EEF0F8; transition: background 0.15s; }
   tbody tr:hover { background: #F8FAFF; }
@@ -258,11 +246,6 @@
   .sp-switch { border: 1.5px solid var(--border); border-radius: 7px; padding: 5px 6px; font-size: 12px; font-family: 'Noto Sans JP', sans-serif; background: #FAFBFF; cursor: pointer; width: 68px; outline: none; }
   .sp-switch:focus { border-color: var(--primary); }
   @media(max-width: 480px) { .sp-row { grid-template-columns: 90px 76px 76px 76px; font-size: 12px; } }
-
-  .interest-meter { display: flex; gap: 6px; margin-top: 4px; }
-  .meter-dot { width: 28px; height: 28px; border-radius: 6px; border: 1.5px solid var(--border); background: #FAFBFF; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--text-light); transition: all 0.15s; user-select: none; }
-  .meter-dot.active { background: var(--primary); border-color: var(--primary); color: white; transform: scale(1.08); }
-  .meter-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-light); margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -284,31 +267,23 @@
 
   <form id="surveyForm">
 
+    <!-- Section 1 -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-num">1</div>
         <div class="section-title">お客様の基本情報</div>
       </div>
-      <div class="two-col">
-        <div class="field">
-          <label class="field-label">世帯人数 <span class="req">必須</span></label>
-          <select id="household">
-            <option value="">選択してください</option>
-            <option>1人</option><option>2人</option>
-            <option>3人</option><option>4人以上</option><option>無回答</option>
-          </select>
-        </div>
-        <div class="field">
-          <label class="field-label">お住まい <span class="req">必須</span></label>
-          <div class="radio-group">
-            <div class="radio-chip"><input type="radio" name="dwelling" id="d1" value="戸建て"><label for="d1">🏠 戸建て</label></div>
-            <div class="radio-chip"><input type="radio" name="dwelling" id="d2" value="マンション・アパート"><label for="d2">🏢 マンション・アパート</label></div>
-            <div class="radio-chip"><input type="radio" name="dwelling" id="d3" value="その他"><label for="d3">その他</label></div>
-          </div>
+      <div class="field">
+        <label class="field-label">お住まい <span class="req">必須</span></label>
+        <div class="radio-group">
+          <div class="radio-chip"><input type="radio" name="dwelling" id="d1" value="戸建て"><label for="d1">🏠 戸建て</label></div>
+          <div class="radio-chip"><input type="radio" name="dwelling" id="d2" value="マンション・アパート"><label for="d2">🏢 マンション・アパート</label></div>
+          <div class="radio-chip"><input type="radio" name="dwelling" id="d3" value="その他"><label for="d3">その他</label></div>
         </div>
       </div>
     </div>
 
+    <!-- Section 2 -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-num">2</div>
@@ -337,70 +312,20 @@
         </div>
       </div>
       <div class="field">
-        <label class="field-label">月額料金（概算）</label>
+        <label class="field-label">月額料金（概算） <span class="req">必須</span></label>
         <select id="monthlyFee">
-          <option value="">選択してください（任意）</option>
+          <option value="">選択してください</option>
           <option>〜2,000円</option><option>2,000〜3,000円</option>
           <option>3,000〜5,000円</option><option>5,000〜7,000円</option>
           <option>7,000円以上</option><option>わからない</option>
         </select>
       </div>
-      <div class="field">
-        <label class="field-label">主な利用シーン（複数選択可）</label>
-        <div class="check-group">
-          <div class="check-chip"><input type="checkbox" id="use1" value="動画視聴"><label for="use1">📺 動画視聴</label></div>
-          <div class="check-chip"><input type="checkbox" id="use2" value="テレワーク・在宅勤務"><label for="use2">💻 テレワーク</label></div>
-          <div class="check-chip"><input type="checkbox" id="use3" value="ゲーム"><label for="use3">🎮 ゲーム</label></div>
-          <div class="check-chip"><input type="checkbox" id="use4" value="SNS・メール"><label for="use4">📱 SNS・メール</label></div>
-          <div class="check-chip"><input type="checkbox" id="use5" value="Web閲覧"><label for="use5">🌐 Web閲覧</label></div>
-          <div class="check-chip"><input type="checkbox" id="use6" value="IoT・スマートホーム"><label for="use6">🏠 IoT・スマートホーム</label></div>
-        </div>
-      </div>
     </div>
 
+    <!-- Section 3 -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-num">3</div>
-        <div class="section-title">現在の回線への満足度</div>
-      </div>
-      <div class="field">
-        <label class="field-label">速度・安定性への満足度 <span class="req">必須</span></label>
-        <div class="star-group">
-          <input type="radio" name="speedRating" id="s5" value="5"><label for="s5">★</label>
-          <input type="radio" name="speedRating" id="s4" value="4"><label for="s4">★</label>
-          <input type="radio" name="speedRating" id="s3" value="3"><label for="s3">★</label>
-          <input type="radio" name="speedRating" id="s2" value="2"><label for="s2">★</label>
-          <input type="radio" name="speedRating" id="s1" value="1"><label for="s1">★</label>
-        </div>
-        <div class="star-label">1〜5で評価（5が最高）</div>
-      </div>
-      <div class="field">
-        <label class="field-label">料金への満足度 <span class="req">必須</span></label>
-        <div class="star-group">
-          <input type="radio" name="priceRating" id="p5" value="5"><label for="p5">★</label>
-          <input type="radio" name="priceRating" id="p4" value="4"><label for="p4">★</label>
-          <input type="radio" name="priceRating" id="p3" value="3"><label for="p3">★</label>
-          <input type="radio" name="priceRating" id="p2" value="2"><label for="p2">★</label>
-          <input type="radio" name="priceRating" id="p1" value="1"><label for="p1">★</label>
-        </div>
-        <div class="star-label">1〜5で評価（5が最高）</div>
-      </div>
-      <div class="field">
-        <label class="field-label">現在の回線で不満な点</label>
-        <div class="check-group col">
-          <div class="check-chip"><input type="checkbox" id="c1" value="速度が遅い"><label for="c1">⚡ 速度が遅い・重い</label></div>
-          <div class="check-chip"><input type="checkbox" id="c2" value="料金が高い"><label for="c2">💰 料金が高い</label></div>
-          <div class="check-chip"><input type="checkbox" id="c3" value="接続が不安定"><label for="c3">📶 接続が不安定・よく切れる</label></div>
-          <div class="check-chip"><input type="checkbox" id="c4" value="サポートが悪い"><label for="c4">🎧 サポート対応が悪い</label></div>
-          <div class="check-chip"><input type="checkbox" id="c5" value="工事が面倒"><label for="c5">🔧 工事・手続きが面倒そう</label></div>
-          <div class="check-chip"><input type="checkbox" id="c6" value="特になし"><label for="c6">👍 特に不満なし</label></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header">
-        <div class="section-num">4</div>
         <div class="section-title">固定電話・テレビ・スマートフォン</div>
       </div>
       <div class="field">
@@ -410,6 +335,7 @@
           <div class="radio-chip"><input type="radio" name="landline" id="ll2" value="au電話"><label for="ll2">📞 au電話</label></div>
           <div class="radio-chip"><input type="radio" name="landline" id="ll3" value="ケーブルテレビ電話"><label for="ll3">📞 ケーブルテレビ</label></div>
           <div class="radio-chip"><input type="radio" name="landline" id="ll4" value="なし"><label for="ll4">🚫 なし</label></div>
+          <div class="radio-chip"><input type="radio" name="landline" id="ll5" value="不明"><label for="ll5">❓ 不明</label></div>
         </div>
       </div>
       <div class="field">
@@ -424,6 +350,7 @@
             <input type="text" id="tvOtherText" placeholder="視聴方法を入力" style="display:none;margin-left:8px;border:1.5px solid var(--border);border-radius:8px;padding:4px 10px;font-size:13px;outline:none;width:140px;">
           </div>
           <div class="radio-chip"><input type="radio" name="tv" id="tv5" value="利用なし"><label for="tv5">🚫 利用なし</label></div>
+          <div class="radio-chip"><input type="radio" name="tv" id="tv6" value="不明"><label for="tv6">❓ 不明</label></div>
         </div>
       </div>
       <div class="field">
@@ -472,44 +399,10 @@
       </div>
     </div>
 
+    <!-- Section 4 -->
     <div class="section-card">
       <div class="section-header">
-        <div class="section-num">5</div>
-        <div class="section-title">乗り換え・新規契約への関心</div>
-      </div>
-      <div class="field">
-        <label class="field-label">乗り換え・新規契約への関心度 <span class="req">必須</span></label>
-        <div class="interest-meter" id="interestMeter">
-          <div class="meter-dot" data-val="1" onclick="setInterest(1)">1</div>
-          <div class="meter-dot" data-val="2" onclick="setInterest(2)">2</div>
-          <div class="meter-dot" data-val="3" onclick="setInterest(3)">3</div>
-          <div class="meter-dot" data-val="4" onclick="setInterest(4)">4</div>
-          <div class="meter-dot" data-val="5" onclick="setInterest(5)">5</div>
-          <div class="meter-dot" data-val="6" onclick="setInterest(6)">6</div>
-          <div class="meter-dot" data-val="7" onclick="setInterest(7)">7</div>
-          <div class="meter-dot" data-val="8" onclick="setInterest(8)">8</div>
-          <div class="meter-dot" data-val="9" onclick="setInterest(9)">9</div>
-          <div class="meter-dot" data-val="10" onclick="setInterest(10)">10</div>
-        </div>
-        <div class="meter-labels"><span>全く興味なし</span><span>非常に興味あり</span></div>
-        <input type="hidden" id="interestScore" value="">
-      </div>
-      <div class="field">
-        <label class="field-label">乗り換えを検討する理由（複数選択可）</label>
-        <div class="check-group">
-          <div class="check-chip"><input type="checkbox" id="r1" value="料金を安くしたい"><label for="r1">💰 料金節約</label></div>
-          <div class="check-chip"><input type="checkbox" id="r2" value="速度を上げたい"><label for="r2">⚡ 速度向上</label></div>
-          <div class="check-chip"><input type="checkbox" id="r3" value="スマホとセット割"><label for="r3">📱 スマホセット割</label></div>
-          <div class="check-chip"><input type="checkbox" id="r4" value="引っ越し予定"><label for="r4">🚛 引っ越し予定</label></div>
-          <div class="check-chip"><input type="checkbox" id="r5" value="キャッシュバック"><label for="r5">🎁 キャッシュバック</label></div>
-          <div class="check-chip"><input type="checkbox" id="r6" value="テレワーク対応"><label for="r6">💼 テレワーク対応</label></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-header">
-        <div class="section-num">6</div>
+        <div class="section-num">4</div>
         <div class="section-title">ご意見・ご要望</div>
       </div>
       <div class="field">
@@ -553,14 +446,13 @@
         <table id="resultTable">
           <thead>
             <tr>
-              <th>#</th><th>日時</th><th>世帯人数</th><th>住居</th>
+              <th>#</th><th>日時</th><th>住居</th>
               <th>プロバイダ</th><th>年数</th><th>月額</th><th>固定電話</th>
-              <th>テレビ</th><th>スマホ</th><th>不満点</th><th>関心度</th>
-              <th>担当スタッフ</th><th>スタッフメモ</th>
+              <th>テレビ</th><th>スマホ</th><th>担当スタッフ</th><th>スタッフメモ</th>
             </tr>
           </thead>
           <tbody id="resultBody">
-            <tr><td colspan="14" class="no-data">まだデータがありません</td></tr>
+            <tr><td colspan="11" class="no-data">まだデータがありません</td></tr>
           </tbody>
         </table>
       </div>
@@ -591,29 +483,20 @@
   const STAFF_PASSWORD = '000128';
   const GAS_URL = 'https://script.google.com/macros/s/AKfycbx00GAqBBPlfUC04T1HkCefRW1N1bJJ0yaM4R6Ex78mj4IDDP4xYbT9xFt5n7FMd2Y1NA/exec';
 
-  let interestValue = 0;
   let isUnlocked = false;
 
   function updateProgress() {
     const required = [
-      document.getElementById('household').value,
       document.querySelector('input[name="dwelling"]:checked'),
-      document.getElementById('interestScore').value
+      document.getElementById('monthlyFee').value,
+      document.querySelector('input[name="landline"]:checked'),
+      document.querySelector('input[name="tv"]:checked'),
     ];
     const filled = required.filter(v => v && v !== '').length;
     document.getElementById('progressBar').style.width = (filled / required.length * 100) + '%';
   }
   document.querySelectorAll('select, input[type="radio"], input[type="checkbox"]')
     .forEach(el => el.addEventListener('change', updateProgress));
-
-  function setInterest(val) {
-    interestValue = val;
-    document.getElementById('interestScore').value = val;
-    document.querySelectorAll('.meter-dot').forEach(dot => {
-      dot.classList.toggle('active', parseInt(dot.dataset.val) <= val);
-    });
-    updateProgress();
-  }
 
   function getProviderValue() {
     const checked = ['pv1','pv2','pv3','pv4','pv5','pv6','pv7','pv8']
@@ -665,19 +548,11 @@
     }).filter(Boolean).join(' | ') || '—';
   }
 
-  function getCheckedById(ids) {
-    return ids.filter(id => document.getElementById(id)?.checked)
-              .map(id => document.getElementById(id).value).join('、');
-  }
-
   function submitSurvey() {
-    const household  = document.getElementById('household').value;
     const dwelling   = document.querySelector('input[name="dwelling"]:checked');
-    const interest   = document.getElementById('interestScore').value;
     const provider   = document.querySelectorAll('#providerField input[type="checkbox"]:checked').length > 0;
     const years      = document.getElementById('providerYears').value.trim();
-    const speedRating = document.querySelector('input[name="speedRating"]:checked');
-    const priceRating = document.querySelector('input[name="priceRating"]:checked');
+    const fee        = document.getElementById('monthlyFee').value;
     const landline   = document.querySelector('input[name="landline"]:checked');
     const tv         = document.querySelector('input[name="tv"]:checked');
     const smartphone = ['spDocomo','spSb','spAu','spYm','spUq','spMvno']
@@ -685,17 +560,14 @@
     const staffName  = document.getElementById('staffName').value.trim();
 
     const errors = [];
-    if (!household)   errors.push('世帯人数');
-    if (!dwelling)    errors.push('お住まい');
-    if (!provider)    errors.push('現在のプロバイダ・回線');
-    if (!years)       errors.push('利用年数');
-    if (!speedRating) errors.push('速度・安定性への満足度');
-    if (!priceRating) errors.push('料金への満足度');
-    if (!landline)    errors.push('ご自宅の固定電話');
-    if (!tv)          errors.push('テレビの視聴方法');
-    if (!smartphone)  errors.push('スマートフォン');
-    if (!interest)    errors.push('関心度');
-    if (!staffName)   errors.push('担当スタッフ名');
+    if (!dwelling)   errors.push('お住まい');
+    if (!provider)   errors.push('現在のプロバイダ・回線');
+    if (!years)      errors.push('利用年数');
+    if (!fee)        errors.push('月額料金');
+    if (!landline)   errors.push('ご自宅の固定電話');
+    if (!tv)         errors.push('テレビの視聴方法');
+    if (!smartphone) errors.push('スマートフォン');
+    if (!staffName)  errors.push('担当スタッフ名');
 
     if (errors.length > 0) {
       alert('必須項目を入力してください：\n\n・' + errors.join('\n・'));
@@ -709,11 +581,11 @@
     const entry = {
       id: Date.now(),
       date: dateStr,
-      household,
       dwelling: dwelling.value,
       provider: getProviderValue(),
       years: document.getElementById('providerYears').value + '年',
-      landline: document.querySelector('input[name="landline"]:checked')?.value || '—',
+      fee,
+      landline: landline?.value || '—',
       tv: (() => {
         const sel = document.querySelector('input[name="tv"]:checked');
         if (!sel) return '—';
@@ -724,25 +596,16 @@
         return sel.value;
       })(),
       smartphone: getSmartphoneData(),
-      fee: document.getElementById('monthlyFee').value || '—',
-      usages: getCheckedById(['use1','use2','use3','use4','use5','use6']) || '—',
-      speedRating: speedRating?.value || '—',
-      priceRating: priceRating?.value || '—',
-      complaints: getCheckedById(['c1','c2','c3','c4','c5','c6']) || '—',
-      interest,
-      reasons: getCheckedById(['r1','r2','r3','r4','r5','r6']) || '—',
       freeText: document.getElementById('freeText').value || '—',
       staffName,
     };
 
-    // localStorageに保存
     const existing = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
     existing.push(entry);
     localStorage.setItem('bbSurveys', JSON.stringify(existing));
 
     showToast('📤 送信中...');
 
-    // GASへ送信（text/plainでno-cors）
     fetch(GAS_URL, {
       method: 'POST',
       mode: 'no-cors',
@@ -767,14 +630,13 @@
     document.getElementById('result-section').style.display = 'block';
     document.getElementById('resultCount').textContent = data.length + '件';
     if (data.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="14" class="no-data">まだデータがありません</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="11" class="no-data">まだデータがありません</td></tr>';
       return;
     }
     tbody.innerHTML = data.map((e, i) => `
       <tr>
         <td>${i+1}</td>
         <td>${e.date}</td>
-        <td>${e.household}</td>
         <td>${e.dwelling}</td>
         <td>${e.provider}</td>
         <td>${e.years || '—'}</td>
@@ -782,8 +644,6 @@
         <td>${e.landline || '—'}</td>
         <td>${e.tv || '—'}</td>
         <td style="max-width:180px;font-size:11px">${e.smartphone || '—'}</td>
-        <td>${e.complaints}</td>
-        <td style="text-align:center;font-weight:700;color:${+e.interest>=7?'#0057FF':+e.interest>=4?'#FBBF24':'#6B7280'}">${e.interest}/10</td>
         <td>${e.staffName || '—'}</td>
         <td style="max-width:160px;font-size:12px">${e.freeText}</td>
       </tr>
@@ -793,8 +653,8 @@
   function exportCSV() {
     const data = JSON.parse(localStorage.getItem('bbSurveys') || '[]');
     if (!data.length) { alert('データがありません'); return; }
-    const headers = ['#','日時','担当スタッフ','世帯人数','住居','プロバイダ','年数','月額','固定電話','テレビ','スマホ','利用シーン','速度評価','料金評価','不満点','関心度','検討理由','自由記述'];
-    const rows = data.map((e,i) => [i+1,e.date,e.staffName||'—',e.household,e.dwelling,e.provider,e.years||'—',e.fee,e.landline||'—',e.tv||'—',e.smartphone||'—',e.usages,e.speedRating,e.priceRating,e.complaints,e.interest,e.reasons,e.freeText]);
+    const headers = ['#','日時','担当スタッフ','住居','プロバイダ','年数','月額','固定電話','テレビ','スマホ','自由記述'];
+    const rows = data.map((e,i) => [i+1,e.date,e.staffName||'—',e.dwelling,e.provider,e.years||'—',e.fee,e.landline||'—',e.tv||'—',e.smartphone||'—',e.freeText]);
     const csv = '\uFEFF' + [headers,...rows].map(r => r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
@@ -819,9 +679,6 @@
 
   function resetForm() {
     document.getElementById('surveyForm').reset();
-    interestValue = 0;
-    document.getElementById('interestScore').value = '';
-    document.querySelectorAll('.meter-dot').forEach(d => d.classList.remove('active'));
     document.getElementById('progressBar').style.width = '0%';
     document.getElementById('providerOtherText').style.display = 'none';
     document.getElementById('tvOtherText').style.display = 'none';
